@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>你的名字 · 个人主页</title>
+  <meta name="description" content="这是你的个人主页，展示关于我、项目与联系方式。" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="profile.jpg" alt="头像" class="avatar" />
+        <div>
+          <h1 id="name">你的名字</h1>
+          <p id="job">前端工程师 · 开发者 · 设计爱好者</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#about">关于</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>你好，我是 <span id="hero-name">你的名字</span></h2>
+        <p class="lead">我做前端与全栈开发，喜欢构建简洁、可访问且快速的网页体验。</p>
+        <p>
+          <a class="btn" href="#projects">查看项目</a>
+          <a class="btn ghost" href="resume.pdf" target="_blank">下载简历</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="about" class="container section">
+      <h3>关于我</h3>
+      <p>这里写一两句自我介绍：你的专长、兴趣、目前工作、技术栈等。</p>
+      <ul class="skills">
+        <li>JavaScript / TypeScript</li>
+        <li>React / Vue</li>
+        <li>Node.js / Express</li>
+        <li>CSS / 响应式设计</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="container section">
+      <h3>项目</h3>
+      <div class="cards">
+        <article class="card">
+          <h4>项目名称 A</h4>
+          <p>简短描述 — 技术栈、职责、亮点。</p>
+          <p><a href="#" target="_blank">查看仓库</a> · <a href="#" target="_blank">在线演示</a></p>
+        </article>
+
+        <article class="card">
+          <h4>项目名称 B</h4>
+          <p>简短描述 — 技术栈、职责、亮点。</p>
+          <p><a href="#" target="_blank">查看仓库</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container section">
+      <h3>联系我</h3>
+      <p>邮箱：<a href="mailto:yourname@example.com">yourname@example.com</a></p>
+      <p>社交：<a href="#" target="_blank">GitHub</a> · <a href="#" target="_blank">LinkedIn</a> · <a href="#" target="_blank">Twitter</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> 你的名字 · Built with ❤️</small>
+    </div>
+  </footer>
+
+  <script>
+    // 小脚本：自动填充年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // 你可以在这里替换动态内容，例如从 JSON 加载项目列表
+  </script>
+</body>
+</html>
