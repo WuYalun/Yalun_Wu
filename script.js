@@ -34,7 +34,7 @@ const I18N = {
     group_agent: "Agent 系统、记忆与 RAG",
     group_embodied: "具身与安全约束场景可信评测",
     group_domain: "领域大模型与多模态基础设施",
-    status_prep_iclr: "撰写中 · 预计投稿 ICLR 2027",
+    status_prep_iclr: "在投",
     status_aaai: "AAAI 2027 在投",
     status_cikm: "成品论文",
     status_emnlp_demo: "成品论文",
@@ -51,9 +51,9 @@ const I18N = {
     authors_ftap: "Yalun Wu 等",
     authors_neuro: "Yalun Wu 等",
     abs_memoryagent:
-      "提出面向 Open MAS 的 training-free 自进化范式，将 Online MemoryAgent 从主推理流程解耦，用 hook 维护 Episodic / Semantic / Working 三区记忆。在 LoCoMo、LongMemEval、MemoryAgentBench 上，外部记忆管理接近 RL-based 方法，且无需额外训练。",
+      "面向去中心化多智能体系统提出跨设定自进化范式，用统一 Execute–Evaluate–Evolve（EEE）协议覆盖合作、混合动机与对抗三类交互。回合内由外部 MemoryAgent 维护隔离的 Episodic / Semantic / Working 结构化记忆；回合间将经验蒸馏为 Partner Profiles 与 Interaction Strategies。在 BBH、HumanEval、LLM-Deliberation、SOTOPIA 与 Werewolf 上验证，一套协议与记忆模式覆盖三种体制。",
     abs_veb:
-      "发现多步视觉 RAG 中的视觉注意力瓶颈：命中准确率在第 7 步后系统性下降 38pp（R²=0.96）。VEB 将优化拆成 R/A/E 三个正交模式，并在 ViDoSeek、SlideVQA 与业务数据上分别提升 10.5 / 5.5 / 15.7 个百分点。",
+      "多步视觉 RAG 中检索成功并不等于证据被有效使用。TARC 以训练免费的方式做轨迹感知资源控制，用证据准入、记忆渲染与视觉预算，把有限的输入、记忆和视觉资源对齐到当前未解决问题。ViDoSeek 准确率 72.1% → 80.8%，SlideVQA 79.1% → 85.6%；固定多步子集分别提升 13.0 与 23.9 个百分点。",
     abs_lhmg:
       "将 LLM Agent 长时记忆建模为可治理状态，结合 Revision Graph、Risk-Gated Memory Conditioning、Consistency-Constrained Decoding 与 Governed Forgetting。冲突事实更新准确率由 40% 提升至 100%，GPT-4o 跨轮一致性最高提升 13pp。",
     abs_procura:
@@ -79,7 +79,7 @@ const I18N = {
     exp_meituan_org: "美团",
     exp_meituan_meta: "大模型算法实习生 · 多步视觉 RAG 与业务智能",
     exp_meituan_1: "重构检索—推理—评测闭环，搭建三路混合检索与多步推理框架，Recall@3 从 51.9% 提升至 79%+。",
-    exp_meituan_2: "主导 85+ 组受控实验，沉淀 VEB 信息瓶颈理论；GPT-4.1 严判准确率 70.8% → 81.5%（+10.7pp），P50 延迟 164s → 21s。",
+    exp_meituan_2: "主导 85+ 组受控实验，沉淀 TARC 轨迹感知资源控制方法；GPT-4.1 严判准确率 70.8% → 81.5%（+10.7pp），P50 延迟 164s → 21s。",
     exp_meituan_3: "框架迁移到用户 query 多模态改写与纯文本任务，分别提升 +7pp 与 +4pp。",
     exp_huazhu_org: "华住集团",
     exp_huazhu_meta: "企业 Agent 落地实习生 · 智能餐饮供应链 / AI 赋能基础设施",
@@ -139,7 +139,7 @@ const I18N = {
     group_agent: "Agents, memory, and RAG",
     group_embodied: "Embodied and safety-constrained evaluation",
     group_domain: "Domain models and multimodal infrastructure",
-    status_prep_iclr: "In preparation · targeting ICLR 2027",
+    status_prep_iclr: "Under review",
     status_aaai: "Under review, AAAI 2027",
     status_cikm: "Completed manuscript",
     status_emnlp_demo: "Completed manuscript",
@@ -156,9 +156,9 @@ const I18N = {
     authors_ftap: "Yalun Wu et al.",
     authors_neuro: "Yalun Wu et al.",
     abs_memoryagent:
-      "A training-free self-evolution paradigm for open multi-agent systems. An Online MemoryAgent is decoupled from the main reasoning loop and maintains episodic / semantic / working memory via hooks. On LoCoMo, LongMemEval, and MemoryAgentBench, external memory management approaches RL-based methods without extra training.",
+      "A cross-setting self-evolution paradigm for decentralized MAS, with a unified Execute–Evaluate–Evolve (EEE) protocol covering cooperative, mixed-motive, and adversarial regimes. Within an episode, an external MemoryAgent maintains isolated episodic / semantic / working memory; across episodes, experience is distilled into partner profiles and interaction strategies. Results on BBH, HumanEval, LLM-Deliberation, SOTOPIA, and Werewolf show one protocol and one memory schema covering all three regimes.",
     abs_veb:
-      "Identifies a visual attention bottleneck in multi-step visual RAG: hit accuracy collapses by 38pp after step 7 (R² = 0.96). VEB decomposes the fix into orthogonal R/A/E modes, improving ViDoSeek / SlideVQA / in-house data by 10.5 / 5.5 / 15.7 pp.",
+      "In multi-step visual RAG, successful retrieval does not guarantee that evidence is used. TARC is a training-free, trajectory-aware resource-control framework that aligns limited input, memory, and visual budget with currently unresolved requirements via evidence admission, memory rendering, and visual budgeting. Accuracy rises from 72.1% to 80.8% on ViDoSeek and from 79.1% to 85.6% on SlideVQA; on fixed multi-step subsets the gains are 13.0 and 23.9 points.",
     abs_lhmg:
       "Treats long-horizon agent memory as a governable state via a revision graph, risk-gated conditioning, consistency-constrained decoding, and governed forgetting. Conflict-update accuracy rises from 40% to 100%; GPT-4o cross-turn consistency improves by up to 13 pp.",
     abs_procura:
@@ -184,7 +184,7 @@ const I18N = {
     exp_meituan_org: "Meituan",
     exp_meituan_meta: "LLM Algorithm Intern · multi-step visual RAG and business intelligence",
     exp_meituan_1: "Rebuilt the retrieve-reason-evaluate loop with hybrid retrieval and multi-step reasoning; Recall@3 rose from 51.9% to 79%+.",
-    exp_meituan_2: "Led 85+ controlled experiments that produced the VEB bottleneck analysis. GPT-4.1 strict accuracy 70.8% → 81.5% (+10.7 pp); P50 latency 164s → 21s.",
+    exp_meituan_2: "Led 85+ controlled experiments that produced TARC, a trajectory-aware resource-control method. GPT-4.1 strict accuracy 70.8% → 81.5% (+10.7 pp); P50 latency 164s → 21s.",
     exp_meituan_3: "Transferred the framework to multimodal query rewriting and text-only tasks, gaining +7 pp and +4 pp.",
     exp_huazhu_org: "H World Group (Huazhu)",
     exp_huazhu_meta: "Enterprise Agent Intern · intelligent catering supply chain",
