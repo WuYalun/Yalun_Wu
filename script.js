@@ -34,7 +34,7 @@ const I18N = {
     group_agent: "Agent 系统、记忆与 RAG",
     group_embodied: "具身与安全约束场景可信评测",
     group_domain: "领域大模型与多模态基础设施",
-    status_prep_iclr: "在投",
+    status_prep_iclr: "论文撰写阶段 · 预计投稿 ICLR 2027",
     status_aaai: "AAAI 2027 在投",
     status_cikm: "成品论文",
     status_emnlp_demo: "成品论文",
@@ -53,7 +53,7 @@ const I18N = {
     abs_memoryagent:
       "面向去中心化多智能体系统提出跨设定自进化范式，用统一 Execute–Evaluate–Evolve（EEE）协议覆盖合作、混合动机与对抗三类交互。回合内由外部 MemoryAgent 维护隔离的 Episodic / Semantic / Working 结构化记忆；回合间将经验蒸馏为 Partner Profiles 与 Interaction Strategies。在 BBH、HumanEval、LLM-Deliberation、SOTOPIA 与 Werewolf 上验证，一套协议与记忆模式覆盖三种体制。",
     abs_veb:
-      "多步视觉 RAG 中检索成功并不等于证据被有效使用。TARC 以训练免费的方式做轨迹感知资源控制，用证据准入、记忆渲染与视觉预算，把有限的输入、记忆和视觉资源对齐到当前未解决问题。ViDoSeek 准确率 72.1% → 80.8%，SlideVQA 79.1% → 85.6%；固定多步子集分别提升 13.0 与 23.9 个百分点。",
+      "多步视觉 RAG 中，检索到相关证据并不等于模型能有效使用这些证据。TARC 是一套无需训练的轨迹感知资源控制框架：通过证据准入、记忆渲染与视觉预算，把有限的输入、记忆和视觉资源对齐到当前尚未解决的问题需求。ViDoSeek 准确率由 72.1% 提升至 80.8%，SlideVQA 由 79.1% 提升至 85.6%；在固定多步子集上分别提升 13.0 与 23.9 个百分点。",
     abs_lhmg:
       "将 LLM Agent 长时记忆建模为可治理状态，结合 Revision Graph、Risk-Gated Memory Conditioning、Consistency-Constrained Decoding 与 Governed Forgetting。冲突事实更新准确率由 40% 提升至 100%，GPT-4o 跨轮一致性最高提升 13pp。",
     abs_procura:
@@ -139,7 +139,7 @@ const I18N = {
     group_agent: "Agents, memory, and RAG",
     group_embodied: "Embodied and safety-constrained evaluation",
     group_domain: "Domain models and multimodal infrastructure",
-    status_prep_iclr: "Under review",
+    status_prep_iclr: "In preparation · targeting ICLR 2027",
     status_aaai: "Under review, AAAI 2027",
     status_cikm: "Completed manuscript",
     status_emnlp_demo: "Completed manuscript",
@@ -158,7 +158,7 @@ const I18N = {
     abs_memoryagent:
       "A cross-setting self-evolution paradigm for decentralized MAS, with a unified Execute–Evaluate–Evolve (EEE) protocol covering cooperative, mixed-motive, and adversarial regimes. Within an episode, an external MemoryAgent maintains isolated episodic / semantic / working memory; across episodes, experience is distilled into partner profiles and interaction strategies. Results on BBH, HumanEval, LLM-Deliberation, SOTOPIA, and Werewolf show one protocol and one memory schema covering all three regimes.",
     abs_veb:
-      "In multi-step visual RAG, successful retrieval does not guarantee that evidence is used. TARC is a training-free, trajectory-aware resource-control framework that aligns limited input, memory, and visual budget with currently unresolved requirements via evidence admission, memory rendering, and visual budgeting. Accuracy rises from 72.1% to 80.8% on ViDoSeek and from 79.1% to 85.6% on SlideVQA; on fixed multi-step subsets the gains are 13.0 and 23.9 points.",
+      "In multi-step visual RAG, retrieving relevant evidence does not mean the model can use it. TARC is a training-free, trajectory-aware resource-control framework: evidence admission, memory rendering, and visual budgeting align limited input, memory, and visual resources with currently unresolved requirements. Accuracy rises from 72.1% to 80.8% on ViDoSeek and from 79.1% to 85.6% on SlideVQA; on fixed multi-step subsets the gains are 13.0 and 23.9 points.",
     abs_lhmg:
       "Treats long-horizon agent memory as a governable state via a revision graph, risk-gated conditioning, consistency-constrained decoding, and governed forgetting. Conflict-update accuracy rises from 40% to 100%; GPT-4o cross-turn consistency improves by up to 13 pp.",
     abs_procura:
