@@ -1,87 +1,344 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>你的名字 · 个人主页</title>
-  <meta name="description" content="这是你的个人主页，展示关于我、项目与联系方式。" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yalun Wu · 吴亚伦</title>
+  <meta name="description" content="Yalun Wu (吴亚伦) is a Master of Computing student at NUS NExT++ Lab, working on trustworthy LLM agents, memory governance, multi-step RAG, and safety-constrained evaluation." />
+  <meta name="author" content="Yalun Wu" />
+  <meta property="og:title" content="Yalun Wu · 吴亚伦" />
+  <meta property="og:description" content="Trustworthy LLM systems, agent memory, multi-step RAG, and safety-constrained evaluation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/profile.jpg" />
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="profile.jpg" alt="头像" class="avatar" />
-        <div>
-          <h1 id="name">你的名字</h1>
-          <p id="job">前端工程师 · 开发者 · 设计爱好者</p>
-        </div>
-      </div>
-      <nav class="nav">
-        <a href="#about">关于</a>
-        <a href="#projects">项目</a>
-        <a href="#contact">联系</a>
-      </nav>
-    </div>
-  </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h2>你好，我是 <span id="hero-name">你的名字</span></h2>
-        <p class="lead">我做前端与全栈开发，喜欢构建简洁、可访问且快速的网页体验。</p>
-        <p>
-          <a class="btn" href="#projects">查看项目</a>
-          <a class="btn ghost" href="resume.pdf" target="_blank">下载简历</a>
-        </p>
-      </div>
-    </section>
+  <div class="page">
+    <aside class="sidebar">
+      <img class="portrait" src="./assets/profile.jpg" alt="Portrait of Yalun Wu" width="900" height="1260" />
+      <p class="cn-name">吴亚伦</p>
+      <h1>Yalun Wu</h1>
+      <p class="role" data-i18n="role">新加坡国立大学 · 计算机硕士</p>
+      <p class="affiliation" data-i18n="affiliation">NExT++ Lab</p>
 
-    <section id="about" class="container section">
-      <h3>关于我</h3>
-      <p>这里写一两句自我介绍：你的专长、兴趣、目前工作、技术栈等。</p>
-      <ul class="skills">
-        <li>JavaScript / TypeScript</li>
-        <li>React / Vue</li>
-        <li>Node.js / Express</li>
-        <li>CSS / 响应式设计</li>
+      <ul class="contacts">
+        <li>
+          <span data-i18n="label_email">邮箱</span>
+          <a href="mailto:aaaronwww@outlook.com">aaaronwww@outlook.com</a>
+        </li>
+        <li>
+          <span>GitHub</span>
+          <a href="https://github.com/WuYalun" target="_blank" rel="noopener">WuYalun</a>
+        </li>
+        <li>
+          <span>OpenReview</span>
+          <a href="https://openreview.net/profile?id=~Yalun_Wu2" target="_blank" rel="noopener">Yalun_Wu2</a>
+        </li>
+        <li>
+          <span>LinkedIn</span>
+          <a href="https://www.linkedin.com/in/%E4%BA%9A%E4%BC%A6-%E5%90%B4-58997837a" target="_blank" rel="noopener">Yalun Wu</a>
+        </li>
       </ul>
-    </section>
 
-    <section id="projects" class="container section">
-      <h3>项目</h3>
-      <div class="cards">
-        <article class="card">
-          <h4>项目名称 A</h4>
-          <p>简短描述 — 技术栈、职责、亮点。</p>
-          <p><a href="#" target="_blank">查看仓库</a> · <a href="#" target="_blank">在线演示</a></p>
-        </article>
-
-        <article class="card">
-          <h4>项目名称 B</h4>
-          <p>简短描述 — 技术栈、职责、亮点。</p>
-          <p><a href="#" target="_blank">查看仓库</a></p>
-        </article>
+      <div class="sidebar-actions">
+        <a class="btn" href="./assets/resume.pdf" data-i18n="download_cv">下载简历</a>
+        <button class="btn ghost" id="lang-toggle" type="button">English</button>
       </div>
-    </section>
+    </aside>
 
-    <section id="contact" class="container section">
-      <h3>联系我</h3>
-      <p>邮箱：<a href="mailto:yourname@example.com">yourname@example.com</a></p>
-      <p>社交：<a href="#" target="_blank">GitHub</a> · <a href="#" target="_blank">LinkedIn</a> · <a href="#" target="_blank">Twitter</a></p>
-    </section>
-  </main>
+    <main id="main">
+      <nav class="toc" aria-label="Section navigation">
+        <a href="#about" data-i18n="nav_about">简介</a>
+        <a href="#education" data-i18n="nav_education">教育</a>
+        <a href="#publications" data-i18n="nav_publications">论文</a>
+        <a href="#experience" data-i18n="nav_experience">经历</a>
+        <a href="#contact" data-i18n="nav_contact">联系</a>
+      </nav>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> 你的名字 · Built with ❤️</small>
-    </div>
-  </footer>
+      <section id="about">
+        <h2 data-i18n="about_title">简介</h2>
+        <p class="lead" data-i18n="about_p1"></p>
+        <p data-i18n="about_p2"></p>
+        <ul class="chips" aria-label="Research topics">
+          <li data-i18n="chip_agent">Agent 系统</li>
+          <li data-i18n="chip_memory">记忆治理</li>
+          <li data-i18n="chip_rag">多步 / 视觉 RAG</li>
+          <li data-i18n="chip_eval">可信评测</li>
+          <li data-i18n="chip_safety">安全约束具身场景</li>
+        </ul>
+      </section>
 
-  <script>
-    // 小脚本：自动填充年份
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // 你可以在这里替换动态内容，例如从 JSON 加载项目列表
-  </script>
+      <section id="education">
+        <h2 data-i18n="edu_title">教育背景</h2>
+        <article class="entry">
+          <div class="entry-when">2025.08 – 2026.12</div>
+          <div>
+            <h3 data-i18n="edu_nus_school">新加坡国立大学（NUS）</h3>
+            <p class="meta" data-i18n="edu_nus_meta">计算机硕士 · NExT++ Lab · 预计 2026.12</p>
+          </div>
+        </article>
+        <article class="entry">
+          <div class="entry-when">2021.09 – 2025.07</div>
+          <div>
+            <h3 data-i18n="edu_buaa_school">北京航空航天大学（BUAA）</h3>
+            <p class="meta" data-i18n="edu_buaa_meta">工学学士，网络空间安全 · GPA 89/100</p>
+          </div>
+        </article>
+        <p class="note" data-i18n="edu_extra"></p>
+      </section>
+
+      <section id="publications">
+        <h2 data-i18n="pub_title">论文与项目</h2>
+        <p class="note" data-i18n="pub_note"></p>
+
+        <div class="filters" role="tablist" aria-label="Publication filters">
+          <button type="button" class="filter is-active" data-filter="all" data-i18n="filter_all">全部</button>
+          <button type="button" class="filter" data-filter="agent" data-i18n="filter_agent">Agent / RAG</button>
+          <button type="button" class="filter" data-filter="embodied" data-i18n="filter_embodied">具身与安全</button>
+          <button type="button" class="filter" data-filter="domain" data-i18n="filter_domain">领域大模型</button>
+        </div>
+
+        <h3 class="group-title" data-group="agent" data-i18n="group_agent">Agent 系统、记忆与 RAG</h3>
+
+        <article class="pub" data-group="agent">
+          <div class="pub-year">2027</div>
+          <div>
+            <p class="pub-title">Self-Evolving Multi-Agent Systems in Open MAS: An Online MemoryAgent Paradigm</p>
+            <p class="pub-authors"><strong>Yalun Wu</strong></p>
+            <p class="pub-venue"><span class="badge prep" data-i18n="status_prep_iclr">撰写中 · 预计投稿 ICLR 2027</span> <span class="role-tag" data-i18n="role_first">第一作者</span></p>
+            <p class="pub-abs" data-i18n="abs_memoryagent"></p>
+          </div>
+        </article>
+
+        <article class="pub" data-group="agent">
+          <div class="pub-year">2027</div>
+          <div>
+            <p class="pub-title">Visual Evidence Bottleneck (VEB): A Unified Framework for Multi-Step Visual RAG</p>
+            <p class="pub-authors"><strong>Yalun Wu</strong></p>
+            <p class="pub-venue"><span class="badge prep" data-i18n="status_prep_iclr">撰写中 · 预计投稿 ICLR 2027</span> <span class="role-tag" data-i18n="role_first">第一作者</span></p>
+            <p class="pub-abs" data-i18n="abs_veb"></p>
+          </div>
+        </article>
+
+        <article class="pub" data-group="agent">
+          <div class="pub-year">2027</div>
+          <div>
+            <p class="pub-title">Long-Horizon Memory Governance for LLM Agents</p>
+            <p class="pub-authors"><span data-i18n="authors_lhmg">Yalun Wu 等</span></p>
+            <p class="pub-venue"><span class="badge review" data-i18n="status_aaai">AAAI 2027 在投</span> <span class="role-tag" data-i18n="role_cofirst">共同第一作者</span></p>
+            <p class="pub-abs" data-i18n="abs_lhmg"></p>
+          </div>
+        </article>
+
+        <article class="pub" data-group="agent">
+          <div class="pub-year">2027</div>
+          <div>
+            <p class="pub-title">ProcuraClaw: Context-Aware Procurement Search via Adaptive Hotel Profiling</p>
+            <p class="pub-authors"><span data-i18n="authors_procura">Yalun Wu 等</span></p>
+            <p class="pub-venue"><span class="badge revise" data-i18n="status_cikm">一轮评审后修改中 · 预计投稿 ICASSP 2027</span> <span class="role-tag" data-i18n="role_cofirst">共同第一作者</span></p>
+            <p class="pub-abs" data-i18n="abs_procura"></p>
+          </div>
+        </article>
+
+        <article class="pub" data-group="agent">
+          <div class="pub-year">2027</div>
+          <div>
+            <p class="pub-title">SchemaBridge: A Unified Schema Interface and Corpus for Cross-Task Semantic Parsing</p>
+            <p class="pub-authors"><strong>Yalun Wu</strong></p>
+            <p class="pub-venue"><span class="badge revise" data-i18n="status_emnlp_demo">一轮评审后修改中 · 预计投稿 NAACL 2027</span> <span class="role-tag" data-i18n="role_first">第一作者</span></p>
+            <p class="pub-abs" data-i18n="abs_schema"></p>
+          </div>
+        </article>
+
+        <h3 class="group-title" data-group="embodied" data-i18n="group_embodied">具身与安全约束场景可信评测</h3>
+
+        <article class="pub" data-group="embodied">
+          <div class="pub-year">2026</div>
+          <div>
+            <p class="pub-title">PilotBench: A Benchmark for General Aviation Agents with Safety Constraints</p>
+            <p class="pub-authors"><strong>Yalun Wu</strong></p>
+            <p class="pub-venue"><span class="badge venue">IJCNN 2026</span> <span class="role-tag" data-i18n="role_first">第一作者</span></p>
+            <p class="pub-abs" data-i18n="abs_pilot"></p>
+          </div>
+        </article>
+
+        <article class="pub" data-group="embodied">
+          <div class="pub-year">2026</div>
+          <div>
+            <p class="pub-title">FLY-EVAL++: An Evidence-Driven Evaluation Protocol for Safety-Constrained Flight Prediction</p>
+            <p class="pub-authors"><strong>Yalun Wu</strong></p>
+            <p class="pub-venue"><span class="badge venue">COLM 2026</span> <span class="role-tag" data-i18n="role_first">第一作者</span></p>
+            <p class="pub-abs" data-i18n="abs_flyeval"></p>
+          </div>
+        </article>
+
+        <article class="pub" data-group="embodied">
+          <div class="pub-year">2026</div>
+          <div>
+            <p class="pub-title">Safety-Constrained Temporal Flight Modeling with Foundation Models</p>
+            <p class="pub-authors"><span data-i18n="authors_ftap">Yalun Wu 等</span></p>
+            <p class="pub-venue"><span class="badge prep" data-i18n="status_nmi">进行中 · 预计投稿 Nature Machine Intelligence</span> <span class="role-tag" data-i18n="role_cofirst">共同第一作者</span></p>
+            <p class="pub-abs" data-i18n="abs_ftap"></p>
+          </div>
+        </article>
+
+        <h3 class="group-title" data-group="domain" data-i18n="group_domain">领域大模型与多模态基础设施</h3>
+
+        <article class="pub" data-group="domain">
+          <div class="pub-year">2026</div>
+          <div>
+            <p class="pub-title">U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding</p>
+            <p class="pub-authors">Anjie Le, Henan Liu, Yue Wang, Zhenyu Liu, Rongkun Zhu, Taohan Weng, Jinze Yu, Boyang Wang, <strong>Yalun Wu</strong>, et al.</p>
+            <p class="pub-venue">
+              <span class="badge venue">ICLR 2026</span>
+               <span class="role-tag" data-i18n="role_core">核心贡献者</span>
+              <a class="pub-link" href="https://arxiv.org/abs/2505.17779" target="_blank" rel="noopener">arXiv</a>
+              <a class="pub-link" href="https://openreview.net/forum?id=jU10qDevGg" target="_blank" rel="noopener">OpenReview</a>
+            </p>
+            <p class="pub-abs" data-i18n="abs_u2"></p>
+          </div>
+        </article>
+
+        <article class="pub" data-group="domain">
+          <div class="pub-year">2027</div>
+          <div>
+            <p class="pub-title">DOLPHIN: A Multimodal Large Language Model for Ultrasound Understanding</p>
+            <p class="pub-authors">Taohan Weng, Chi Zhang, ChenHui Zhang, <strong>Yalun Wu</strong>, et al.</p>
+            <p class="pub-venue">
+              <span class="badge revise" data-i18n="status_emnlp">一轮评审后修改中 · 预计投稿 CVPR 2027</span>
+               <span class="role-tag" data-i18n="role_dolphin">核心贡献者 · 共同一作后首位</span>
+              <a class="pub-link" href="https://openreview.net/forum?id=EkC2ImlhgF" target="_blank" rel="noopener">OpenReview</a>
+            </p>
+            <p class="pub-abs" data-i18n="abs_dolphin"></p>
+          </div>
+        </article>
+
+        <article class="pub" data-group="domain">
+          <div class="pub-year">2026</div>
+          <div>
+            <p class="pub-title">NeuroMark: Multi-Modal Evaluation for Neuropsychiatry with Joint Trustworthiness Metrics</p>
+            <p class="pub-authors"><span data-i18n="authors_neuro">Yalun Wu 等</span></p>
+            <p class="pub-venue"><span class="badge prep" data-i18n="status_nc">整理中 · 预计投稿 Nature Communications</span> <span class="role-tag" data-i18n="role_cofirst">共同第一作者</span></p>
+            <p class="pub-abs" data-i18n="abs_neuro"></p>
+          </div>
+        </article>
+
+        <article class="pub" data-group="domain">
+          <div class="pub-year">2025</div>
+          <div>
+            <p class="pub-title">H2HTalk: Evaluating Large Language Models as Emotional Companion</p>
+            <p class="pub-authors">Boyang Wang, <strong>Yalun Wu</strong>, Hongcheng Guo, Zhoujun Li</p>
+            <p class="pub-venue">
+              <span class="badge published">NLPCC 2025 Oral</span>
+               <span class="role-tag" data-i18n="role_second">第二作者</span>
+              <a class="pub-link" href="https://arxiv.org/abs/2507.03543" target="_blank" rel="noopener">arXiv</a>
+              <a class="pub-link" href="https://doi.org/10.1007/978-981-95-3343-5_35" target="_blank" rel="noopener">DOI</a>
+              <a class="pub-link" href="https://github.com/LolerPanda/H2HTalk" target="_blank" rel="noopener">Code</a>
+            </p>
+            <p class="pub-abs" data-i18n="abs_h2h"></p>
+          </div>
+        </article>
+      </section>
+
+      <section id="experience">
+        <h2 data-i18n="exp_title">实习经历</h2>
+
+        <article class="entry">
+          <div class="entry-when">2026.05 – <span data-i18n="now">至今</span></div>
+          <div>
+            <h3 data-i18n="exp_meituan_org">美团</h3>
+            <p class="meta" data-i18n="exp_meituan_meta">大模型算法实习生 · 多步视觉 RAG 与业务智能</p>
+            <ul>
+              <li data-i18n="exp_meituan_1"></li>
+              <li data-i18n="exp_meituan_2"></li>
+              <li data-i18n="exp_meituan_3"></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-when">2025.10 – 2026.01</div>
+          <div>
+            <h3 data-i18n="exp_huazhu_org">华住集团</h3>
+            <p class="meta" data-i18n="exp_huazhu_meta">企业 Agent 落地实习生 · 智能餐饮供应链 / AI 赋能基础设施</p>
+            <ul>
+              <li data-i18n="exp_huazhu_1"></li>
+              <li data-i18n="exp_huazhu_2"></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-when">2025.04 – 2025.09</div>
+          <div>
+            <h3 data-i18n="exp_dolphin_org">海豚之声医疗科技有限公司</h3>
+            <p class="meta" data-i18n="exp_dolphin_meta">大模型评测算法实习生 · 视觉语言模型评测</p>
+            <ul>
+              <li data-i18n="exp_dolphin_1"></li>
+              <li data-i18n="exp_dolphin_2"></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-when">2024.07 – 2024.09</div>
+          <div>
+            <h3 data-i18n="exp_uav_org">北京飞熊科技有限公司</h3>
+            <p class="meta" data-i18n="exp_uav_meta">实习生 · 无人机研发部门</p>
+            <ul>
+              <li data-i18n="exp_uav_1"></li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section id="skills">
+        <h2 data-i18n="skills_title">技术能力</h2>
+        <div class="skill-grid">
+          <article>
+            <h3 data-i18n="skill_agent_h">大模型与 Agent</h3>
+            <p data-i18n="skill_agent_p"></p>
+          </article>
+          <article>
+            <h3 data-i18n="skill_rag_h">RAG 与上下文工程</h3>
+            <p data-i18n="skill_rag_p"></p>
+          </article>
+          <article>
+            <h3 data-i18n="skill_eval_h">可信评测</h3>
+            <p data-i18n="skill_eval_p"></p>
+          </article>
+          <article>
+            <h3 data-i18n="skill_mm_h">多模态与领域模型</h3>
+            <p data-i18n="skill_mm_p"></p>
+          </article>
+        </div>
+        <p class="note">Python · PyTorch · Linux · Git · LaTeX</p>
+      </section>
+
+      <section id="contact">
+        <h2 data-i18n="contact_title">联系</h2>
+        <p data-i18n="contact_p"></p>
+        <p>
+          <a href="mailto:aaaronwww@outlook.com">aaaronwww@outlook.com</a>
+          ·
+          <a href="https://github.com/WuYalun" target="_blank" rel="noopener">GitHub</a>
+          ·
+          <a href="https://openreview.net/profile?id=~Yalun_Wu2" target="_blank" rel="noopener">OpenReview</a>
+        </p>
+      </section>
+
+      <footer>
+        <p>© <span id="year"></span> Yalun Wu · 吴亚伦</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
 </body>
 </html>
