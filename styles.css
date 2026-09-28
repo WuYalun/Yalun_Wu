@@ -69,12 +69,11 @@ a:hover { color: #083844; }
 .portrait {
   width: 100%;
   height: auto;
-  max-height: 320px;
+  aspect-ratio: 1;
   display: block;
   border-radius: 10px;
-  background: #ddd;
-  object-fit: cover;
-  object-position: 50% 12%;
+  background: #efece6;
+  object-fit: contain;
 }
 
 .cn-name {
@@ -303,6 +302,22 @@ h2 {
 
 .pub-abs { font-size: 0.95rem; }
 
+.pub.is-featured .pub-title { font-size: 1.14rem; }
+
+.pub.is-compact {
+  padding: 0.62rem 0;
+}
+
+.pub.is-compact .pub-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.pub.is-compact .pub-abs {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 .pub-link {
   margin-left: 0.55rem;
   font-size: 0.9rem;
@@ -372,7 +387,7 @@ footer {
 
   .portrait {
     width: 168px;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 1;
   }
 
   .entry, .pub { grid-template-columns: 1fr; gap: 0.25rem; }
