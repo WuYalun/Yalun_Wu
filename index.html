@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,7 +48,7 @@
 
       <div class="sidebar-actions">
         <a class="btn" id="cv-link" href="./assets/resume.pdf" data-i18n="download_cv">下载简历</a>
-        <button class="btn ghost" id="lang-toggle" type="button">English</button>
+        <button class="btn ghost lang-toggle" id="lang-toggle" type="button">English</button>
       </div>
     </aside>
 
@@ -59,6 +59,7 @@
         <a href="#publications" data-i18n="nav_publications">论文</a>
         <a href="#experience" data-i18n="nav_experience">经历</a>
         <a href="#contact" data-i18n="nav_contact">联系</a>
+        <button class="toc-lang lang-toggle" type="button">English</button>
       </nav>
 
       <section id="about">
@@ -70,6 +71,11 @@
           <li data-i18n="chip_mm">Multimodal Reasoning</li>
           <li data-i18n="chip_agent">AI Agents</li>
         </ul>
+        <div class="highlight">
+          <span class="badge published">COLM 2026</span>
+          <p><span data-i18n="hl_text"></span>
+            <a class="pub-link" href="https://arxiv.org/abs/2609.04021" target="_blank" rel="noopener" data-i18n="hl_paper">Paper</a></p>
+        </div>
       </section>
 
       <section id="education">
@@ -88,7 +94,6 @@
             <p class="meta" data-i18n="edu_buaa_meta">工学学士，网络空间安全 · GPA 89/100</p>
           </div>
         </article>
-        <p class="note" data-i18n="edu_extra"></p>
       </section>
 
       <section id="publications">
@@ -106,20 +111,20 @@
         <article class="pub is-featured" data-group="agent">
           <div class="pub-year">2027</div>
           <div>
-            <p class="pub-title">EvolveMAS: A Unified Self-Evolution Framework for Decentralized Multi-Agent Systems</p>
-            <p class="pub-authors"><strong>Yalun Wu</strong></p>
-            <p class="pub-venue"><span class="badge review" data-i18n="status_iclr">ICLR 2027 在投</span> <span class="role-tag" data-i18n="role_first">第一作者</span></p>
-            <p class="pub-abs" data-i18n="abs_memoryagent"></p>
+            <p class="pub-title"><a href="https://arxiv.org/abs/2609.37349" target="_blank" rel="noopener">TAEC: Trajectory-Aware Evidence Coordination for Multi-Step Visual RAG</a></p>
+            <p class="pub-authors"><strong>Yalun Wu</strong>, Bingzhou Wang, Boyang Wang, Peiying Wang, Shaojie He, Yunhan Wang, Shaozu Yuan, Jiawei Wang</p>
+            <p class="pub-venue"><span class="badge review" data-i18n="status_iclr">ICLR 2027 在投</span> <span class="role-tag" data-i18n="role_first">第一作者</span> <a class="pub-link" href="https://arxiv.org/abs/2609.37349" target="_blank" rel="noopener">arXiv</a></p>
+            <p class="pub-abs" data-i18n="abs_veb"></p>
           </div>
         </article>
 
         <article class="pub is-featured" data-group="agent">
           <div class="pub-year">2027</div>
           <div>
-            <p class="pub-title">TAEC: Trajectory-Aware Evidence Coordination for Multi-Step Visual RAG</p>
-            <p class="pub-authors"><strong>Yalun Wu</strong></p>
+            <p class="pub-title">EvolveMAS: A Unified Self-Evolution Framework for Decentralized Multi-Agent Systems</p>
+            <p class="pub-authors"><strong>Yalun Wu</strong>, Qiwei Ma, Bingbing Xu, Dan Zhang, Long Bai, Boyang Wang, Jiatong Li, Zheqi Lv, Shaozu Yuan, Peiying Wang, Jiawei Wang, An Zhang, Tat-Seng Chua</p>
             <p class="pub-venue"><span class="badge review" data-i18n="status_iclr">ICLR 2027 在投</span> <span class="role-tag" data-i18n="role_first">第一作者</span></p>
-            <p class="pub-abs" data-i18n="abs_veb"></p>
+            <p class="pub-abs" data-i18n="abs_memoryagent"></p>
           </div>
         </article>
 
@@ -136,16 +141,6 @@
         <article class="pub is-compact" data-group="agent">
           <div class="pub-year">2027</div>
           <div>
-            <p class="pub-title">LFUSE: Learned Evidence Fusion for Noisy Spoken and Image-Grounded Product Search</p>
-            <p class="pub-authors"><span data-i18n="authors_procura">Yalun Wu 等</span></p>
-            <p class="pub-venue"><span class="badge review" data-i18n="status_icassp">ICASSP 2027 在投</span> <span class="role-tag" data-i18n="role_cofirst">共同第一作者</span></p>
-            <p class="pub-abs" data-i18n="abs_procura"></p>
-          </div>
-        </article>
-
-        <article class="pub is-compact" data-group="agent">
-          <div class="pub-year">2027</div>
-          <div>
             <p class="pub-title">LHMG: Long-Horizon Memory Governance for LLM Agents</p>
             <p class="pub-authors"><span data-i18n="authors_lhmg">Yalun Wu 等</span></p>
             <p class="pub-venue"><span class="badge review" data-i18n="status_aaai">AAAI 2027 在投</span> <span class="role-tag" data-i18n="role_cofirst">共同第一作者</span></p>
@@ -156,8 +151,18 @@
         <article class="pub is-compact" data-group="agent">
           <div class="pub-year">2027</div>
           <div>
+            <p class="pub-title">LFUSE: Learned Evidence Fusion for Noisy Spoken and Image-Grounded Product Search</p>
+            <p class="pub-authors"><span data-i18n="authors_procura">Yalun Wu 等</span></p>
+            <p class="pub-venue"><span class="badge review" data-i18n="status_icassp">ICASSP 2027 在投</span> <span class="role-tag" data-i18n="role_cofirst">共同第一作者</span></p>
+            <p class="pub-abs" data-i18n="abs_procura"></p>
+          </div>
+        </article>
+
+        <article class="pub is-compact" data-group="agent">
+          <div class="pub-year">2027</div>
+          <div>
             <p class="pub-title">SchemaBridge: A Unified Schema Interface and Corpus for Cross-Task Semantic Parsing</p>
-            <p class="pub-authors"><strong>Yalun Wu</strong></p>
+            <p class="pub-authors"><span data-i18n="authors_schema">Yalun Wu 等</span></p>
             <p class="pub-venue"><span class="badge prep" data-i18n="status_naacl">NAACL 2027 拟投</span> <span class="role-tag" data-i18n="role_first">第一作者</span></p>
             <p class="pub-abs" data-i18n="abs_schema"></p>
           </div>
@@ -168,28 +173,20 @@
         <article class="pub" data-group="embodied">
           <div class="pub-year">2026</div>
           <div>
-            <p class="pub-title">PilotBench: A Benchmark for General Aviation Agents with Safety Constraints</p>
-            <p class="pub-authors"><strong>Yalun Wu</strong></p>
-            <p class="pub-venue">
-              <span class="badge venue">IJCNN 2026</span>
-              <span class="role-tag" data-i18n="role_first">第一作者</span>
-              <a class="pub-link" href="https://arxiv.org/abs/2604.08987" target="_blank" rel="noopener">arXiv</a>
-            </p>
-            <p class="pub-abs" data-i18n="abs_pilot"></p>
+            <p class="pub-title"><a href="https://arxiv.org/abs/2609.04021" target="_blank" rel="noopener">FLY-EVAL++: An Evidence-Driven Evaluation Protocol for Safety-Constrained Flight Prediction with Large Language Models</a></p>
+            <p class="pub-authors"><strong>Yalun Wu</strong>, Junfeng Fang, Jiawei Wang, Haotian Liu, Qijun Yang, Minghan Yang, Hongcheng Guo, Zhoujun Li, Boyang Wang</p>
+            <p class="pub-venue"><span class="badge published">COLM 2026</span> <span class="role-tag" data-i18n="role_first">第一作者</span> <a class="pub-link" href="https://arxiv.org/abs/2609.04021" target="_blank" rel="noopener">arXiv</a></p>
+            <p class="pub-abs" data-i18n="abs_flyeval"></p>
           </div>
         </article>
 
         <article class="pub" data-group="embodied">
           <div class="pub-year">2026</div>
           <div>
-            <p class="pub-title">FLY-EVAL++: An Evidence-Driven Evaluation Protocol for Safety-Constrained Flight Prediction with Large Language Models</p>
-            <p class="pub-authors"><strong>Yalun Wu</strong>, Junfeng Fang, Jiawei Wang, Haotian Liu, Qijun Yang, Minghan Yang, Hongcheng Guo, Zhoujun Li, Boyang Wang</p>
-            <p class="pub-venue">
-              <span class="badge published">COLM 2026</span>
-              <span class="role-tag" data-i18n="role_first">第一作者</span>
-              <a class="pub-link" href="https://arxiv.org/abs/2609.04021" target="_blank" rel="noopener">arXiv</a>
-            </p>
-            <p class="pub-abs" data-i18n="abs_flyeval"></p>
+            <p class="pub-title"><a href="https://arxiv.org/abs/2604.08987" target="_blank" rel="noopener">PilotBench: A Benchmark for General Aviation Agents with Safety Constraints</a></p>
+            <p class="pub-authors"><strong>Yalun Wu</strong>, Haotian Liu, Zhoujun Li, Boyang Wang</p>
+            <p class="pub-venue"><span class="badge published">IJCNN 2026</span> <span class="role-tag" data-i18n="role_first">第一作者</span> <a class="pub-link" href="https://arxiv.org/abs/2604.08987" target="_blank" rel="noopener">arXiv</a></p>
+            <p class="pub-abs" data-i18n="abs_pilot"></p>
           </div>
         </article>
 
@@ -208,29 +205,29 @@
         <article class="pub" data-group="domain">
           <div class="pub-year">2026</div>
           <div>
-            <p class="pub-title">U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding</p>
-            <p class="pub-authors">Anjie Le, Henan Liu, Yue Wang, Zhenyu Liu, Rongkun Zhu, Taohan Weng, Jinze Yu, Boyang Wang, <strong>Yalun Wu</strong>, et al.</p>
-            <p class="pub-venue">
-              <span class="badge venue">ICLR 2026</span>
-               <span class="role-tag" data-i18n="role_core">核心贡献者</span>
-              <a class="pub-link" href="https://arxiv.org/abs/2505.17779" target="_blank" rel="noopener">arXiv</a>
-              <a class="pub-link" href="https://openreview.net/forum?id=jU10qDevGg" target="_blank" rel="noopener">OpenReview</a>
-            </p>
+            <p class="pub-title"><a href="https://arxiv.org/abs/2505.17779" target="_blank" rel="noopener">U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding</a></p>
+            <p class="pub-authors">Anjie Le, Henan Liu, Yue Wang, Zhenyu Liu, Rongkun Zhu, Taohan Weng, Jinze Yu, Boyang Wang, <strong>Yalun Wu</strong>, Kaiwen Yan, et al.</p>
+            <p class="pub-venue"><span class="badge published">ICLR 2026</span> <span class="role-tag" data-i18n="role_core">核心贡献者</span> <a class="pub-link" href="https://arxiv.org/abs/2505.17779" target="_blank" rel="noopener">arXiv</a> <a class="pub-link" href="https://openreview.net/forum?id=jU10qDevGg" target="_blank" rel="noopener">OpenReview</a></p>
             <p class="pub-abs" data-i18n="abs_u2"></p>
           </div>
         </article>
 
         <article class="pub" data-group="domain">
-          <div class="pub-year">2027</div>
+          <div class="pub-year">2025</div>
           <div>
-            <p class="pub-title">DOLPHIN: A Multimodal Large Language Model for Ultrasound Understanding</p>
-            <p class="pub-authors">Taohan Weng, Chi Zhang, ChenHui Zhang, <strong>Yalun Wu</strong>, et al.</p>
-            <p class="pub-venue">
-              <span class="badge prep" data-i18n="status_cvpr">CVPR 2027 拟投</span>
-               <span class="role-tag" data-i18n="role_dolphin">核心贡献者 · 共同一作后首位</span>
-              <a class="pub-link" href="https://arxiv.org/abs/2509.25748" target="_blank" rel="noopener">arXiv</a>
-              <a class="pub-link" href="https://openreview.net/forum?id=EkC2ImlhgF" target="_blank" rel="noopener">OpenReview</a>
-            </p>
+            <p class="pub-title"><a href="https://arxiv.org/abs/2507.03543" target="_blank" rel="noopener">H2HTalk: Evaluating Large Language Models as Emotional Companion</a></p>
+            <p class="pub-authors">Boyang Wang, <strong>Yalun Wu</strong>, Hongcheng Guo, Zhoujun Li</p>
+            <p class="pub-venue"><span class="badge published">NLPCC 2025 Oral</span> <span class="role-tag" data-i18n="role_second">第二作者</span> <a class="pub-link" href="https://arxiv.org/abs/2507.03543" target="_blank" rel="noopener">arXiv</a> <a class="pub-link" href="https://doi.org/10.1007/978-981-95-3343-5_35" target="_blank" rel="noopener">DOI</a> <a class="pub-link" href="https://github.com/LolerPanda/H2HTalk" target="_blank" rel="noopener">Code</a></p>
+            <p class="pub-abs" data-i18n="abs_h2h"></p>
+          </div>
+        </article>
+
+        <article class="pub" data-group="domain">
+          <div class="pub-year">2025</div>
+          <div>
+            <p class="pub-title"><a href="https://arxiv.org/abs/2509.25748" target="_blank" rel="noopener">Dolphin v1.0 Technical Report</a></p>
+            <p class="pub-authors">Taohan Weng, Kaibing Hu, Henan Liu, Siya Liu, Xiaoyang Liu, Zhenyu Liu, Jiren Ren, Boyan Wang, Boyang Wang, Yiyu Wang, <strong>Yalun Wu</strong>, et al.</p>
+            <p class="pub-venue"><span class="badge revise" data-i18n="status_preprint">arXiv 预印本</span> <span class="role-tag" data-i18n="role_core">核心贡献者</span> <a class="pub-link" href="https://arxiv.org/abs/2509.25748" target="_blank" rel="noopener">arXiv</a></p>
             <p class="pub-abs" data-i18n="abs_dolphin"></p>
           </div>
         </article>
@@ -242,22 +239,6 @@
             <p class="pub-authors"><span data-i18n="authors_neuro">Yalun Wu 等</span></p>
             <p class="pub-venue"><span class="badge prep" data-i18n="status_nc">整理中 · 预计投稿 Nature Communications</span> <span class="role-tag" data-i18n="role_cofirst">共同第一作者</span></p>
             <p class="pub-abs" data-i18n="abs_neuro"></p>
-          </div>
-        </article>
-
-        <article class="pub" data-group="domain">
-          <div class="pub-year">2025</div>
-          <div>
-            <p class="pub-title">H2HTalk: Evaluating Large Language Models as Emotional Companion</p>
-            <p class="pub-authors">Boyang Wang, <strong>Yalun Wu</strong>, Hongcheng Guo, Zhoujun Li</p>
-            <p class="pub-venue">
-              <span class="badge published">NLPCC 2025 Oral</span>
-               <span class="role-tag" data-i18n="role_second">第二作者</span>
-              <a class="pub-link" href="https://arxiv.org/abs/2507.03543" target="_blank" rel="noopener">arXiv</a>
-              <a class="pub-link" href="https://doi.org/10.1007/978-981-95-3343-5_35" target="_blank" rel="noopener">DOI</a>
-              <a class="pub-link" href="https://github.com/LolerPanda/H2HTalk" target="_blank" rel="noopener">Code</a>
-            </p>
-            <p class="pub-abs" data-i18n="abs_h2h"></p>
           </div>
         </article>
       </section>

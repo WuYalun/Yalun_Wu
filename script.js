@@ -12,8 +12,7 @@ const I18N = {
     about_title: "简介",
     about_p1:
       "我是吴亚伦，目前在新加坡国立大学攻读计算机硕士，所属 NExT++ Lab。研究方向为 LLM Evaluation、Multimodal Reasoning 与 AI Agents。",
-    about_p2:
-      "我关心的问题是：当模型进入真实业务、长时记忆和安全关键环境时，如何把开放式生成变成可验证、可审计、可复现的系统行为。实践上覆盖从问题抽象、任务定义、评测体系到系统实现与业务闭环。",
+    about_p2: "我关心的问题是：当大模型进入真实业务流程、需要长期记忆或运行在安全关键环境中时，如何让开放式生成变成可验证、可审计、可复现的系统行为。实践上覆盖从问题抽象、任务定义、评测体系到系统实现与业务闭环。",
     chip_eval: "LLM Evaluation",
     chip_mm: "Multimodal Reasoning",
     chip_agent: "AI Agents",
@@ -22,7 +21,6 @@ const I18N = {
     edu_nus_meta: "计算机硕士 · NExT++ Lab · 预计 2026.12",
     edu_buaa_school: "北京航空航天大学（BUAA）",
     edu_buaa_meta: "工学学士，网络空间安全 · GPA 89/100",
-    edu_extra: "雅思 6.5；GRE 322（V152 / Q170）。",
     pub_title: "论文与项目",
     filter_all: "全部",
     filter_agent: "Agent / RAG",
@@ -41,19 +39,15 @@ const I18N = {
     role_first: "第一作者",
     role_cofirst: "共同第一作者",
     role_core: "核心贡献者",
-    role_dolphin: "核心贡献者 · 共同一作后首位",
     role_second: "第二作者",
     role_corr: "通讯作者",
     authors_lhmg: "Yalun Wu 等",
     authors_procura: "Yalun Wu 等",
     authors_ftap: "Yalun Wu 等",
     authors_neuro: "Yalun Wu 等",
-    abs_memoryagent:
-      "面向去中心化多智能体系统的统一自进化框架。用 Execute–Evaluate–Evolve 协议覆盖合作、混合动机与对抗三类交互：回合内由外部 MemoryAgent 维护隔离的结构化记忆，回合间把经验蒸馏为可复用的 Partner Profiles 与 Interaction Strategies。在 5 个基准、6 组配置中取得最高归一化平均分 77.2，较 Self-Memory +7.7。",
-    abs_veb:
-      "多步视觉 RAG 里，检索到相关证据并不等于整条推理轨迹都能用上这些证据。TAEC 是一套无需训练的轨迹感知证据协调框架：在共享轨迹状态中跟踪尚未解决的答题需求，据此决定哪些证据进入上下文、累积记忆如何保留、视觉证据读到多细。在 3 个基准、4 个骨干模型的 12 组设置中平均准确率 66.8%，较 DAG 基线 +4.5pp；同一骨干下在 ViDoSeek、SlideVQA、MMLongBench-Doc 上分别 +7.4/6.9/5.6pp。",
-    abs_spec:
-      "运行时越来越多从模型外部判定 Agent 任务是否做完。我们问：这种外部监督需要多少可执行规格、需要哪一部分、这部分从哪里来。实验里，生产与前沿模型几乎都会把未完成的业务流程报成完成，改指令修不好。固定 Agent、任务和步数，只改变运行时持有的成功条件，发现外部监督受规格限制：它只和自己持有的条件一样可靠，持有哪些条件比持有多少更重要。覆盖 Agent 自身失败条件的 mask，通过率是漏掉一条时的两倍以上；从数据和政策文档里读出的取值与禁令，才是真正管用的条件。",
+    abs_memoryagent: "面向去中心化多 Agent 系统的自进化框架，覆盖合作、混合动机与对抗场景。每个 Agent 配有独立 MemoryAgent，在推理上下文之外管理记忆，并把经验提炼为可复用的策略与伙伴画像，无需更新模型参数。在 5 个基准、6 组配置上取得最高归一化平均分 77.2，较 Self-Memory 高 7.7 分。",
+    abs_veb: "多步视觉 RAG 中，检索到相关证据并不等于整条推理轨迹都能用上它。TAEC 无需训练，以尚未满足的答题需求作为共享状态，统一协调证据准入、记忆呈现与视觉细节分配。12 组设置下平均准确率 66.8%，较 DAG 基线提升 4.5pp。",
+    abs_spec: "Agent 经常把未完成的任务报告为已完成，运行时因此越来越依赖外部检查。我们研究这种外部监督需要哪些可执行的成功条件：在 50% 条件覆盖率下，依据另一模型的稳定失败记录优先选取检查条件，两个模型的严格通过率较随机选择分别提升 18.5/19.3pp，同时减少错误放行。",
     abs_lhmg:
       "以版本化修订、风险门控、约束解码和治理式遗忘管理 Agent 记忆，冲突事实更新准确率 40% → 100%，跨轮次决策一致性最高 +13pp。",
     abs_procura:
@@ -68,8 +62,7 @@ const I18N = {
       "围绕长时序、安全关键飞行建模，重建高保真 FTAP 数据集，并显式区分物理可行预测与语言合理但存在安全风险的输出。",
     abs_u2:
       "超声理解综合基准：7,241 例、15 个解剖区域、8 类临床任务。评测通用与医学 VLM 在分类、检测、回归与报告生成上的能力边界。",
-    abs_dolphin:
-      "超声多模态大模型。三阶段训练含后训练、指令微调与 UARPO。U2-Score 0.5835 达到 SOTA；推理模式相对标准模式诊断准确率 +2.4%，测量 RMSE −10.6%，检测准确率 +16%。",
+    abs_dolphin: "超声多模态大模型技术报告，训练覆盖后训练、指令微调与 UARPO 强化学习三个阶段，在 U2-BENCH 上取得 U2-Score 0.5835。",
     abs_neuro:
       "神经精神科大模型评测，组织文本医学推理与脑影像视觉理解双轨任务。主导 BrainVLM 流程，在 16 个 VLM、6 类任务上做统一对比。",
     abs_h2h:
@@ -105,6 +98,10 @@ const I18N = {
     skill_mm_p: "VLM、医学影像理解、具身时序建模、视觉 RAG 与业务智能搜索。",
     contact_title: "联系",
     contact_p: "欢迎就 Agent 记忆、多步 RAG、可信评测与安全关键系统交流。邮件是最快的联系方式。",
+    hl_text: "FLY-EVAL++ 被 COLM 2026 接收（第一作者）：面向安全约束飞行预测的证据驱动评测协议，不依赖 LLM 打分。",
+    hl_paper: "论文",
+    status_preprint: "arXiv 预印本",
+    authors_schema: "Yalun Wu 等",
   },
   en: {
     role: "M.Comp. student, National University of Singapore",
@@ -119,8 +116,7 @@ const I18N = {
     about_title: "About",
     about_p1:
       "I am Yalun Wu, a Master of Computing student at NUS NExT++ Lab. Research interests: LLM Evaluation, Multimodal Reasoning, and AI Agents.",
-    about_p2:
-      "I care about a practical question: once models enter real workflows, long-horizon memory, and safety-critical settings, how can open-ended generation become verifiable, auditable, and reproducible system behavior.",
+    about_p2: "I am interested in how open-ended generation can become verifiable, auditable, and reproducible system behavior when LLMs are deployed in real workflows, rely on long-term memory, or operate in safety-critical settings.",
     chip_eval: "LLM Evaluation",
     chip_mm: "Multimodal Reasoning",
     chip_agent: "AI Agents",
@@ -129,7 +125,6 @@ const I18N = {
     edu_nus_meta: "Master of Computing · NExT++ Lab · expected Dec 2026",
     edu_buaa_school: "Beihang University (BUAA)",
     edu_buaa_meta: "B.E. in Cyberspace Security · GPA 89/100",
-    edu_extra: "IELTS 6.5; GRE 322 (V152 / Q170).",
     pub_title: "Publications & projects",
     filter_all: "All",
     filter_agent: "Agent / RAG",
@@ -148,19 +143,15 @@ const I18N = {
     role_first: "First author",
     role_cofirst: "Co-first author",
     role_core: "Core contributor",
-    role_dolphin: "Core contributor · first after co-first authors",
     role_second: "Second author",
     role_corr: "Corresponding author",
     authors_lhmg: "Yalun Wu et al.",
     authors_procura: "Yalun Wu et al.",
     authors_ftap: "Yalun Wu et al.",
     authors_neuro: "Yalun Wu et al.",
-    abs_memoryagent:
-      "A unified self-evolution framework for decentralized multi-agent systems. An Execute–Evaluate–Evolve protocol covers cooperative, mixed-motive, and adversarial regimes: an external MemoryAgent maintains isolated structured memory within an episode, and experience is distilled into reusable partner profiles and interaction strategies across episodes. Highest normalized mean score (77.2) across 5 benchmarks and 6 configurations, 7.7 points above Self-Memory.",
-    abs_veb:
-      "In multi-step visual RAG, retrieving relevant evidence does not keep it usable over the whole reasoning trajectory. TAEC is a training-free framework that tracks unresolved answer requirements in a shared trajectory state, then coordinates which evidence enters context, how memory is retained, and at what detail visual evidence is read. Across 12 settings (3 benchmarks × 4 backbones) it reaches 66.8% mean accuracy, 4.5 pp above DAG; same-backbone gains on ViDoSeek, SlideVQA, and MMLongBench-Doc are 7.4/6.9/5.6 pp.",
-    abs_spec:
-      "Runtimes increasingly decide from outside the model whether an agent’s task is done. We ask how much of a task’s executable specification such supervision needs, which part, and where that part can come from. Across production and frontier models, unfinished workflows were declared complete in nearly every sampled failure, and no instruction repaired it. Holding the agent, tasks, and step budget fixed, external supervision is specification-limited: it is as reliable as the conditions it holds, and which conditions it holds matters more than how many. Masks that cover the agent’s own failures pass more than twice as often as masks that miss one; the conditions that matter carry values and prohibitions found in data and policy documents, not in the request.",
+    abs_memoryagent: "A self-evolution framework for decentralized multi-agent systems across cooperative, mixed-motive, and adversarial settings. Each agent is paired with a MemoryAgent that manages memory outside its reasoning context and distills experience into reusable strategies and partner profiles, without updating model weights. It achieves the best normalized mean score (77.2) across 5 benchmarks and 6 configurations, 7.7 points above Self-Memory.",
+    abs_veb: "In multi-step visual RAG, retrieving the right evidence does not mean the reasoning trajectory keeps using it. TAEC is a training-free framework that tracks unmet answer requirements as shared state to coordinate evidence admission, memory rendering, and visual detail. It reaches 66.8% mean accuracy across 12 settings, 4.5 pp above DAG.",
+    abs_spec: "Agents often report unfinished tasks as complete, so runtimes increasingly rely on external checks. We study which executable success conditions such supervision needs. At 50% coverage, choosing conditions from another model's recorded failures raises strict pass rates by 18.5/19.3 pp over random selection for two models and lets fewer incomplete tasks through.",
     abs_lhmg:
       "Governs agent memory via versioned revision, risk gating, constrained decoding, and governed forgetting; conflicting-fact update accuracy 40% → 100%, cross-turn consistency up to +13 pp.",
     abs_procura:
@@ -175,8 +166,7 @@ const I18N = {
       "Builds a high-fidelity FTAP temporal dataset for safety-critical long-horizon flight modeling, and separates physically feasible predictions from fluent but unsafe outputs.",
     abs_u2:
       "A comprehensive ultrasound understanding benchmark: 7,241 cases, 15 anatomical regions, and 8 clinical tasks spanning classification, detection, regression, and report generation.",
-    abs_dolphin:
-      "A multimodal LLM for ultrasound with post-training, instruction tuning, and UARPO. Achieves a U2-Score of 0.5835 (SOTA). The reasoning mode improves diagnosis by 2.4%, reduces measurement RMSE by 10.6%, and lifts detection by 16%.",
+    abs_dolphin: "Technical report for an ultrasound multimodal LLM trained with post-training, instruction tuning, and UARPO reinforcement learning; reaches a U2-Score of 0.5835 on U2-BENCH.",
     abs_neuro:
       "A dual-track evaluation for neuropsychiatric foundation models, covering textual medical reasoning and brain-MRI visual understanding across 16 VLMs and 6 tasks.",
     abs_h2h:
@@ -212,6 +202,10 @@ const I18N = {
     skill_mm_p: "VLMs, medical image understanding, embodied temporal modeling, visual RAG, and business-intelligence search.",
     contact_title: "Contact",
     contact_p: "I am happy to discuss agent memory, multi-step RAG, trustworthy evaluation, and safety-critical systems. Email is the fastest way to reach me.",
+    hl_text: "FLY-EVAL++ (first author) was accepted at COLM 2026: an evidence-driven evaluation protocol for safety-constrained flight prediction, with no LLM-as-judge.",
+    hl_paper: "Paper",
+    status_preprint: "arXiv preprint",
+    authors_schema: "Yalun Wu et al.",
   },
 };
 
@@ -225,19 +219,23 @@ function applyLang(lang) {
     const key = el.getAttribute("data-i18n");
     if (dict[key] != null) el.textContent = dict[key];
   });
-  const toggle = document.getElementById("lang-toggle");
-  if (toggle) toggle.textContent = lang === "zh" ? "English" : "中文";
+  document.querySelectorAll(".lang-toggle").forEach((t) => {
+    t.textContent = lang === "zh" ? "English" : "中文";
+  });
   const cv = document.getElementById("cv-link");
   if (cv) cv.href = lang === "zh" ? "./assets/resume.pdf" : "./assets/resume_en.pdf";
-  localStorage.setItem("site-lang", lang);
+  try { localStorage.setItem("site-lang", lang); } catch (e) {}
 }
 
-const saved = localStorage.getItem("site-lang") === "en" ? "en" : "zh";
+let saved = "en";
+try { if (localStorage.getItem("site-lang") === "zh") saved = "zh"; } catch (e) {}
 applyLang(saved);
 
-document.getElementById("lang-toggle")?.addEventListener("click", () => {
-  const next = document.documentElement.lang.startsWith("zh") ? "en" : "zh";
-  applyLang(next);
+document.querySelectorAll(".lang-toggle").forEach((t) => {
+  t.addEventListener("click", () => {
+    const next = document.documentElement.lang.startsWith("zh") ? "en" : "zh";
+    applyLang(next);
+  });
 });
 
 const filters = document.querySelectorAll(".filter");
