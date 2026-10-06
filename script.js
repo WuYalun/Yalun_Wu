@@ -47,7 +47,6 @@ const I18N = {
     authors_neuro: "Yalun Wu 等",
     abs_memoryagent: "面向去中心化多 Agent 系统的自进化框架，覆盖合作、混合动机与对抗场景。每个 Agent 配有独立 MemoryAgent，在推理上下文之外管理记忆，并把经验提炼为可复用的策略与伙伴画像，无需更新模型参数。在 5 个基准、6 组配置上取得最高归一化平均分 77.2，较 Self-Memory 高 7.7 分。",
     abs_veb: "多步视觉 RAG 中，检索到相关证据并不等于整条推理轨迹都能用上它。TAEC 无需训练，以尚未满足的答题需求作为共享状态，统一协调证据准入、记忆呈现与视觉细节分配。12 组设置下平均准确率 66.8%，较 DAG 基线提升 4.5pp。",
-    abs_spec: "Agent 经常把未完成的任务报告为已完成，运行时因此越来越依赖外部检查。我们研究这种外部监督需要哪些可执行的成功条件：在 50% 条件覆盖率下，依据另一模型的稳定失败记录优先选取检查条件，两个模型的严格通过率较随机选择分别提升 18.5/19.3pp，同时减少错误放行。",
     abs_progress: "Agent 框架常依据模型自报的任务进度决定继续还是停止。我们在 τ²-bench 与可控测试平台 StageIF 上，沿任务全生命周期评测进度汇报的可靠性：几乎所有部署模型都只在部分阶段可靠，多数在执行中途失准、完成后恢复，最新一代则在收尾时趋于保守。结论是框架不应仅凭模型的状态汇报控制任务流程。",
     abs_lhmg:
       "以版本化修订、风险门控、约束解码和治理式遗忘管理 Agent 记忆，冲突事实更新准确率 40% → 100%，跨轮次决策一致性最高 +13pp。",
@@ -152,7 +151,6 @@ const I18N = {
     authors_neuro: "Yalun Wu et al.",
     abs_memoryagent: "A self-evolution framework for decentralized multi-agent systems across cooperative, mixed-motive, and adversarial settings. Each agent is paired with a MemoryAgent that manages memory outside its reasoning context and distills experience into reusable strategies and partner profiles, without updating model weights. It achieves the best normalized mean score (77.2) across 5 benchmarks and 6 configurations, 7.7 points above Self-Memory.",
     abs_veb: "In multi-step visual RAG, retrieving the right evidence does not mean the reasoning trajectory keeps using it. TAEC is a training-free framework that tracks unmet answer requirements as shared state to coordinate evidence admission, memory rendering, and visual detail. It reaches 66.8% mean accuracy across 12 settings, 4.5 pp above DAG.",
-    abs_spec: "Agents often report unfinished tasks as complete, so runtimes increasingly rely on external checks. We study which executable success conditions such supervision needs. At 50% coverage, choosing conditions from another model's recorded failures raises strict pass rates by 18.5/19.3 pp over random selection for two models and lets fewer incomplete tasks through.",
     abs_progress: "Agent frameworks often decide whether to continue or stop based on a model's self-reported progress. Evaluating this across the full task lifecycle on τ²-bench and the controlled StageIF testbed, we find nearly every deployed model is reliable only at some stages: most lose accuracy mid-task and recover at the end, while the newest generation turns conservative at the finish line. Frameworks should not control task flow on state reports alone.",
     abs_lhmg:
       "Governs agent memory via versioned revision, risk gating, constrained decoding, and governed forgetting; conflicting-fact update accuracy 40% → 100%, cross-turn consistency up to +13 pp.",
