@@ -56,17 +56,15 @@ const I18N = {
       "跨任务语义解析的统一 Schema 接口与语料。",
     abs_pilot:
       "面向具身飞行的轨迹—姿态联合预测基准，基于 708 条真实飞行数据，对 41 个模型评测。PILOT-SCORE 融合回归精度、指令遵循与安全合规，并揭示精度与可控性之间的张力。",
-    abs_flyeval:
-      "证据驱动的两阶段评测协议：先对结构化输出、物理可行性与 20 条 FAA 约束做确定性校验，再聚合为可解释分数，全程不依赖 LLM 打分。在 21 个模型上识别出五类系统性失效模式。",
+    abs_flyeval: "证据驱动的两阶段评测协议：先用协议门控检查 45 字段的结构化输出，再由确定性检查器就字段有效性、物理一致性、安全误差阈值与预测精度生成证据原子，按严重度聚合为可解释分数，全程不用 LLM 打分。在 21 个模型上识别出五类系统性失效。",
     abs_ftap:
       "围绕长时序、安全关键飞行建模，重建高保真 FTAP 数据集，并显式区分物理可行预测与语言合理但存在安全风险的输出。",
     abs_u2:
       "超声理解综合基准：7,241 例、15 个解剖区域、8 类临床任务。评测通用与医学 VLM 在分类、检测、回归与报告生成上的能力边界。",
-    abs_dolphin: "超声多模态大模型技术报告，训练覆盖后训练、指令微调与 UARPO 强化学习三个阶段，在 U2-BENCH 上取得 U2-Score 0.5835。",
+    abs_dolphin: "超声多模态大模型技术报告：基于 Qwen2.5-VL，经领域训练、指令对齐与 UARPO 强化学习三个阶段，得到标准模式的 Dolphin V1 与深度推理的 Dolphin R1；R1 在 U2-BENCH 上取得 U2-Score 0.5835。",
     abs_neuro:
       "神经精神科大模型评测，组织文本医学推理与脑影像视觉理解双轨任务。主导 BrainVLM 流程，在 16 个 VLM、6 类任务上做统一对比。",
-    abs_h2h:
-      "情感伴侣评测基准，覆盖 4,800+ 多轮场景，并引入基于依恋理论的 SAP 安全模块。长程记忆与隐式需求理解仍是主要瓶颈；去掉 SAP 后违规率显著上升。",
+    abs_h2h: "情感陪伴评测基准：4,650 个场景覆盖陪伴对话、回忆与行程三类能力，评测 50 个模型，并引入基于依恋理论的 SAP（安全依恋人格）。记忆保持、长程规划与隐式需求仍是主要瓶颈；去掉 SAP 后，高风险场景违规率从 0.7% 升至 7.1%。",
     exp_title: "实习经历",
     now: "至今",
     exp_meituan_org: "美团",
@@ -159,17 +157,15 @@ const I18N = {
       "A unified schema interface and corpus for cross-task semantic parsing.",
     abs_pilot:
       "A trajectory-attitude benchmark for embodied flight from 708 real segments, evaluating 41 models. PILOT-SCORE combines regression accuracy, instruction following, and safety compliance.",
-    abs_flyeval:
-      "An evidence-driven two-stage protocol: deterministic checks over structured outputs, physics feasibility, and 20 FAA constraints, then interpretable aggregation with no LLM-as-judge. Identifies five systematic failure modes across 21 models.",
+    abs_flyeval: "An evidence-driven two-stage protocol: a protocol gate checks the 45-field structured output, then deterministic verifiers emit evidence atoms for field validity, physics consistency, safety error thresholds, and accuracy, aggregated by severity with no LLM-as-judge. Identifies five systematic failure modes across 21 models.",
     abs_ftap:
       "Builds a high-fidelity FTAP temporal dataset for safety-critical long-horizon flight modeling, and separates physically feasible predictions from fluent but unsafe outputs.",
     abs_u2:
       "A comprehensive ultrasound understanding benchmark: 7,241 cases, 15 anatomical regions, and 8 clinical tasks spanning classification, detection, regression, and report generation.",
-    abs_dolphin: "Technical report for an ultrasound multimodal LLM trained with post-training, instruction tuning, and UARPO reinforcement learning; reaches a U2-Score of 0.5835 on U2-BENCH.",
+    abs_dolphin: "Technical report for an ultrasound multimodal LLM built on Qwen2.5-VL: domain training and instruction alignment yield Dolphin V1 (standard mode), and UARPO reinforcement learning yields Dolphin R1 (deep reasoning), which reaches a U2-Score of 0.5835 on U2-BENCH.",
     abs_neuro:
       "A dual-track evaluation for neuropsychiatric foundation models, covering textual medical reasoning and brain-MRI visual understanding across 16 VLMs and 6 tasks.",
-    abs_h2h:
-      "A benchmark for LLM emotional companions over 4,800+ multi-turn scenarios, with an attachment-theory SAP safety module. Long-horizon memory and implicit-need understanding remain the main bottlenecks.",
+    abs_h2h: "A benchmark for LLM emotional companions: 4,650 scenarios across companion dialogue, recollection, and itinerary, evaluated on 50 models, with an attachment-theory Secure Attachment Persona (SAP). Memory retention, long-horizon planning, and implicit needs remain the main bottlenecks; without SAP, violations in high-risk scenarios rise from 0.7% to 7.1%.",
     exp_title: "Experience",
     now: "present",
     exp_meituan_org: "Meituan",

@@ -551,6 +551,8 @@ dialog.demo::backdrop { background: rgba(28, 25, 23, 0.45); }
 .d-bar.k-muted { fill: #d6d3d1; }
 .d-bar.k-accent { fill: var(--accent); }
 .d-bar.k-warn { fill: #f59e0b; }
+.d-bar.k-ok { fill: #16a34a; }
+.d-bar.k-bad { fill: #dc2626; }
 
 @media (max-width: 640px) {
   .demo-stage { overflow-x: auto; -webkit-overflow-scrolling: touch; }
