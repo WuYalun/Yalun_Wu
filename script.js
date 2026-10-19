@@ -70,11 +70,11 @@ const I18N = {
     exp_title: "实习经历",
     now: "至今",
     exp_meituan_org: "美团",
-    exp_meituan_meta: "大模型算法实习生 · 多步视觉 RAG 与业务智能",
-    exp_meituan_1: "面向线上知识库问答，搭建三路混合检索与多步视觉 RAG，优化证据筛选、跨步记忆与视觉输入，Recall@3 从 51.9% 提升至 79%+。",
-    exp_meituan_2: "主导 85+ 组受控实验，分析检索策略、推理参数、上下文积累、视觉质量与 Agent 框架的影响，形成可迁移的配置与调优流程。",
-    exp_meituan_3: "内部严格评测准确率 70.8% → 81.5%（+10.7pp），P50 推理延迟 164s → 21s。",
-    exp_meituan_4: "扩展至用户查询多模态改写与纯文本问答，业务数据集上分别 +7pp 与 +4pp，完成查询改写上线。",
+    exp_meituan_meta: "大模型算法实习生 · 多模态 RAG 与 Agent",
+    exp_meituan_1: "面向线上知识库问答构建多步视觉 RAG，将效果退化归纳为输入污染、跨步记忆退化与视觉容量限制，以共享需求状态协调证据筛选、记忆管控与像素分配。",
+    exp_meituan_2: "内部图文问答准确率 70.8% → 82.8%（+12.0pp），单项最优 85.8%；公开集 ViDoSeek 72.5% → 81.3%；81.5% 方案的 P50 延迟为 21s，与单步基线持平。",
+    exp_meituan_3: "证据精选与记忆控制迁移至纯文本及音视频问答，4,547 条开放式业务问答准确率 70.33% → 77.22%。",
+    exp_meituan_4: "推动多模态查询改写上线，改写效果 79.0% → 95.8%（+16.8pp），P90 延迟 4.01s。",
     exp_huazhu_org: "华住集团",
     exp_huazhu_meta: "企业 Agent 落地实习生 · 智能餐饮供应链 / AI 赋能基础设施",
     exp_huazhu_1: "围绕智能统购、批量采购、补货与菜单规划，梳理规则约束与模型可介入环节，实现早期多 Agent 决策原型。",
@@ -102,6 +102,7 @@ const I18N = {
     hl_paper: "论文",
     status_preprint: "arXiv 预印本",
     authors_schema: "Yalun Wu 等",
+    demo_btn: "▶ 动画演示",
   },
   en: {
     role: "M.Comp. student, National University of Singapore",
@@ -174,11 +175,11 @@ const I18N = {
     exp_title: "Experience",
     now: "present",
     exp_meituan_org: "Meituan",
-    exp_meituan_meta: "LLM Algorithm Intern · multi-step visual RAG and business intelligence",
-    exp_meituan_1: "Built three-route hybrid retrieval and multi-step visual RAG for production knowledge-base QA; optimized evidence selection, cross-step memory, and visual inputs, raising Recall@3 from 51.9% to 79%+.",
-    exp_meituan_2: "Led 85+ controlled experiments on retrieval, inference settings, accumulated context, visual quality, and agent architectures, producing reusable configuration and tuning procedures.",
-    exp_meituan_3: "Raised strict internal accuracy from 70.8% to 81.5% (+10.7 pp); cut P50 inference latency from 164s to 21s.",
-    exp_meituan_4: "Extended to multimodal query rewriting and text-only QA, gaining 7/4 pp on business benchmarks; deployed query rewriting to production.",
+    exp_meituan_meta: "LLM Algorithm Intern · multimodal RAG and agents",
+    exp_meituan_1: "Built multi-step visual RAG for production knowledge-base QA; traced degradation to input contamination, cross-step memory decay, and limited visual capacity, and coordinated evidence selection, memory control, and pixel allocation through a shared requirement state.",
+    exp_meituan_2: "Raised internal image–text QA accuracy from 70.8% to 82.8% (+12.0 pp), best single method 85.8%; ViDoSeek 72.5% → 81.3%. The 81.5% configuration runs at 21 s P50, on par with the single-step baseline.",
+    exp_meituan_3: "Transferred evidence curation and memory control to text and audio–video QA: 70.33% → 77.22% on 4,547 open-ended business questions.",
+    exp_meituan_4: "Shipped multimodal query rewriting: quality 79.0% → 95.8% (+16.8 pp) at 4.01 s P90 latency.",
     exp_huazhu_org: "H World Group (Huazhu)",
     exp_huazhu_meta: "Enterprise Agent Intern · intelligent catering supply chain",
     exp_huazhu_1: "Mapped procurement, replenishment, and menu-planning workflows into callable multi-agent modules under operational constraints.",
@@ -206,6 +207,7 @@ const I18N = {
     hl_paper: "Paper",
     status_preprint: "arXiv preprint",
     authors_schema: "Yalun Wu et al.",
+    demo_btn: "▶ Walkthrough",
   },
 };
 
@@ -225,6 +227,7 @@ function applyLang(lang) {
   const cv = document.getElementById("cv-link");
   if (cv) cv.href = lang === "zh" ? "./assets/resume.pdf" : "./assets/resume_en.pdf";
   try { localStorage.setItem("site-lang", lang); } catch (e) {}
+  document.dispatchEvent(new Event("langchange"));
 }
 
 let saved = "en";
