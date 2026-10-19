@@ -61,7 +61,7 @@ const I18N = {
       "围绕长时序、安全关键飞行建模，重建高保真 FTAP 数据集，并显式区分物理可行预测与语言合理但存在安全风险的输出。",
     abs_u2:
       "超声理解综合基准：7,241 例、15 个解剖区域、8 类临床任务。评测通用与医学 VLM 在分类、检测、回归与报告生成上的能力边界。",
-    abs_dolphin: "超声多模态大模型技术报告：基于 Qwen2.5-VL，经领域训练、指令对齐与 UARPO 强化学习三个阶段，得到标准模式的 Dolphin V1 与深度推理的 Dolphin R1；R1 在 U2-BENCH 上取得 U2-Score 0.5835。",
+    abs_dolphin: "超声多模态大模型：基于 Qwen2.5-VL，经后训练、指令微调与 UARPO 强化学习三个阶段，得到 Dolphin Chat 与 Dolphin Reasoning；后者在 U2-Bench 上取得 U2-Score 0.5835。",
     abs_neuro:
       "神经精神科大模型评测，组织文本医学推理与脑影像视觉理解双轨任务。主导 BrainVLM 流程，在 16 个 VLM、6 类任务上做统一对比。",
     abs_h2h: "情感陪伴评测基准：4,650 个场景覆盖陪伴对话、回忆与行程三类能力，评测 50 个模型，并引入基于依恋理论的 SAP（安全依恋人格）。记忆保持、长程规划与隐式需求仍是主要瓶颈；去掉 SAP 后，高风险场景违规率从 0.7% 升至 7.1%。",
@@ -99,6 +99,7 @@ const I18N = {
     status_preprint: "arXiv 预印本",
     authors_schema: "Yalun Wu 等",
     demo_btn: "▶ 动画演示",
+    link_report: "技术报告（arXiv）",
   },
   en: {
     role: "M.Comp. student, National University of Singapore",
@@ -162,7 +163,7 @@ const I18N = {
       "Builds a high-fidelity FTAP temporal dataset for safety-critical long-horizon flight modeling, and separates physically feasible predictions from fluent but unsafe outputs.",
     abs_u2:
       "A comprehensive ultrasound understanding benchmark: 7,241 cases, 15 anatomical regions, and 8 clinical tasks spanning classification, detection, regression, and report generation.",
-    abs_dolphin: "Technical report for an ultrasound multimodal LLM built on Qwen2.5-VL: domain training and instruction alignment yield Dolphin V1 (standard mode), and UARPO reinforcement learning yields Dolphin R1 (deep reasoning), which reaches a U2-Score of 0.5835 on U2-BENCH.",
+    abs_dolphin: "A multimodal LLM for ultrasound built on Qwen2.5-VL: post-training and instruction tuning yield Dolphin Chat, and UARPO reinforcement learning yields Dolphin Reasoning, which reaches a U2-Score of 0.5835 on U2-Bench.",
     abs_neuro:
       "A dual-track evaluation for neuropsychiatric foundation models, covering textual medical reasoning and brain-MRI visual understanding across 16 VLMs and 6 tasks.",
     abs_h2h: "A benchmark for LLM emotional companions: 4,650 scenarios across companion dialogue, recollection, and itinerary, evaluated on 50 models, with an attachment-theory Secure Attachment Persona (SAP). Memory retention, long-horizon planning, and implicit needs remain the main bottlenecks; without SAP, violations in high-risk scenarios rise from 0.7% to 7.1%.",
@@ -200,6 +201,7 @@ const I18N = {
     status_preprint: "arXiv preprint",
     authors_schema: "Yalun Wu et al.",
     demo_btn: "▶ Walkthrough",
+    link_report: "Tech report (arXiv)",
   },
 };
 

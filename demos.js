@@ -114,71 +114,6 @@
       ],
     },
 
-    lhmg: {
-      els: [
-        N("in", 15, 110, 120, 54, ["New fact or\nconversation turn", "新事实 / 对话轮次"]),
-        N("rg", 165, 30, 180, 54, ["Revision graph\nappend-only + audit log", "Revision Graph\n追加式版本 + 审计日志"], "accent"),
-        N("risk", 165, 130, 180, 44, ["Risk gate", "风险门控"]),
-        N("dec", 380, 80, 170, 54, ["Consistency-constrained\ndecoding (NLI)", "一致性约束解码\n（NLI 打分）"]),
-        N("out", 570, 87, 60, 40, ["Answer", "回答"], "ok"),
-        N("fg", 380, 190, 170, 44, ["Governed forgetting", "治理式遗忘"]),
-        E("e1", "in", "rg"), E("e2", "in", "risk"),
-        E("e3", "rg", "dec"), E("e4", "risk", "dec"), E("e5", "dec", "out"),
-        BARS("res", 15, 200, 330, 86, ["Conflicting-fact update accuracy (%)", "冲突事实更新准确率（%）"],
-          [{ t: ["Baseline", "基线"], v: 40 }, { t: "LHMG", v: 100, k: "accent" }], 100),
-      ],
-      steps: [
-        S(["in"], "A new fact can conflict with what the agent already remembers.", "新事实可能与 Agent 已有的记忆冲突。"),
-        S(["rg", "e1"], "Revision graph: updates are appended as new versions with an immutable audit log, never overwritten.", "Revision Graph：更新以新版本追加，并保留不可变审计日志，不覆盖旧记录。"),
-        S(["risk", "e2"], "A risk gate decides how strongly each memory may condition the answer.", "风险门控决定每条记忆能在多大程度上影响回答。"),
-        S(["dec", "out", "e3", "e4", "e5"], "Decoding is constrained with NLI scores to suppress answers that contradict current memory.", "解码时用 NLI 打分约束，抑制与当前记忆矛盾的输出。", ["dec"]),
-        S(["fg"], "Governed forgetting retires stale memory under explicit rules.", "治理式遗忘按明确规则清退过时记忆。"),
-        S(["res"], "Conflicting-fact update accuracy rises from 40% to 100%; cross-turn consistency improves by up to 13 pp.", "冲突事实更新准确率从 40% 提升到 100%；跨轮次决策一致性最高提升 13pp。"),
-      ],
-    },
-
-    lfuse: {
-      els: [
-        N("sp", 15, 40, 140, 54, ["Spoken query\n(noisy transcript)", "语音查询\n（转写含噪）"]),
-        N("img", 15, 160, 140, 54, ["Product photo", "商品图片"]),
-        N("e_sp", 195, 44, 140, 46, ["Speech evidence", "语音证据"]),
-        N("e_img", 195, 164, 140, 46, ["Image evidence", "图像证据"]),
-        N("fuse", 375, 98, 130, 58, ["Learned\nevidence fusion", "学习式\n证据融合"], "accent"),
-        N("cat", 375, 220, 130, 44, ["Product catalog", "商品库"], "muted"),
-        N("rank", 535, 98, 95, 58, ["Ranked\nproducts", "商品排序"], "ok"),
-        E("a1", "sp", "e_sp"), E("a2", "img", "e_img"),
-        E("b1", "e_sp", "fuse"), E("b2", "e_img", "fuse"),
-        E("c1", "fuse", "rank"), E("c2", "cat", "rank", "M505,242 L582,242 L582,156"),
-      ],
-      steps: [
-        S(["sp", "img"], "Buyers search for products by voice and by photo; speech transcripts are often noisy.", "采购人员用语音和图片搜索商品，语音转写往往含噪。"),
-        S(["e_sp", "e_img", "a1", "a2"], "Each signal is turned into evidence about the target product.", "两路输入各自转化为关于目标商品的证据。"),
-        S(["fuse", "b1", "b2"], "LFUSE learns how to fuse the two kinds of evidence instead of trusting either signal alone.", "LFUSE 学习如何融合两类证据，而不是单独依赖某一路信号。"),
-        S(["cat", "rank", "c1", "c2"], "The fused evidence ranks products from the catalog. Tasks and evaluation were defined from real procurement scenarios.", "融合后的证据对商品库排序。任务与评测基于真实采购场景定义。"),
-      ],
-    },
-
-    schema: {
-      els: [
-        N("ner", 15, 20, 110, 40, "NER"),
-        N("re", 15, 88, 110, 40, "RE"),
-        N("ee", 15, 156, 110, 40, "EE"),
-        N("slu", 15, 224, 110, 40, ["SLU / intent", "SLU / 意图"]),
-        N("sch", 210, 115, 180, 60, ["Unified schema\ncategory → args", "统一 Schema\ncategory → args"], "accent"),
-        N("corp", 210, 20, 180, 54, ["61 datasets\n2.75M multilingual examples", "61 个数据集\n275 万多语言样本"], "muted"),
-        N("par", 450, 70, 170, 44, ["One parser", "统一解析器"]),
-        N("dep", 450, 165, 170, 54, ["Production intent engine\n(Parallel Match)", "生产级 Intent Engine\n（Parallel Match）"], "ok"),
-        E("e1", "ner", "sch"), E("e2", "re", "sch"), E("e3", "ee", "sch"), E("e4", "slu", "sch"),
-        E("e5", "corp", "sch"), E("e6", "sch", "par"), E("e7", "par", "dep"),
-      ],
-      steps: [
-        S(["ner", "re", "ee", "slu"], "Entity, relation, event, and intent tasks each use their own label formats.", "NER、RE、EE、SLU 四类任务各自使用不同的标注格式。"),
-        S(["sch", "e1", "e2", "e3", "e4"], "SchemaBridge maps all four into one hierarchical category–args schema.", "SchemaBridge 把四类任务映射到统一的 category–args 层级 Schema。"),
-        S(["corp", "e5"], "61 datasets and 2.75M multilingual examples are unified under one evaluation protocol.", "61 个数据集、275 万级多语言样本统一到同一套评测协议下。"),
-        S(["par", "dep", "e6", "e7"], "One parser serves every task; the paper also analyzes latency and training–deployment schema mismatch in a production intent engine.", "一个解析器覆盖全部任务；论文还分析了生产级 Intent Engine 的部署延迟及训练与部署之间的 Schema 差异。"),
-      ],
-    },
-
     flyeval: {
       els: [
         N("in", 10, 30, 125, 54, ["Flight state\n(PilotBench)", "飞行状态\n（PilotBench）"], "muted"),
@@ -230,26 +165,6 @@
         S(["trad", "e4", "e6"], "An ablation sets three time-series forecasters against six GPT-4o and Qwen3-32B prompting variants.", "消融实验让 3 个时序预测器与 6 个 GPT-4o、Qwen3-32B 提示变体同台比较。"),
         S(["mae"], "FlightPatchNet reaches 7.01 MAE and the best LLM variant 11.28, though the LLMs follow 86–89% of instructions.", "FlightPatchNet 的 MAE 为 7.01，最好的 LLM 变体为 11.28，但 LLM 能遵循 86–89% 的指令。"),
         S(["best"], "Physics chain-of-thought cuts violations by about 25%; Qwen3-32B with it strikes the best balance at Pilot-Score 69.21.", "物理思维链让违规率下降约 25%，用它的 Qwen3-32B 以 69.21 分取得最佳平衡。"),
-      ],
-    },
-
-    ftap: {
-      els: [
-        N("s1", 10, 40, 150, 54, ["FTAP time series\n(reconstructed)", "FTAP 时序数据\n（重建）"]),
-        N("s2", 10, 170, 150, 54, ["Public aviation\ndata", "公开航空数据"]),
-        N("bench", 200, 100, 180, 64, ["Physics-constrained\nlong-horizon benchmark", "含物理约束的\n长时程预测基准"], "accent"),
-        N("ok", 435, 40, 190, 46, ["Physically feasible", "物理可行"], "ok"),
-        N("bad", 435, 178, 190, 46, ["Plausible but unsafe", "看似合理但不安全"], "bad"),
-        N("obj", 200, 225, 180, 54, ["Safety-constrained\ntraining objective", "安全约束\n训练目标"]),
-        E("e1", "s1", "bench"), E("e2", "s2", "bench"),
-        E("e3", "bench", "ok"), E("e4", "bench", "bad"),
-        E("e5", "bad", "obj", "M435,215 L380,245"),
-      ],
-      steps: [
-        S(["s1", "s2"], "Reconstruct high-fidelity FTAP flight time series and merge them with public aviation data.", "重建高保真 FTAP 飞行时序数据，并整合多源公开航空数据。"),
-        S(["bench", "e1", "e2"], "Build a long-horizon flight-prediction benchmark with physical constraints.", "构建含物理约束的长时程飞行预测基准。"),
-        S(["ok", "bad", "e3", "e4"], "Evaluation separates physically feasible forecasts from ones that read well but are unsafe.", "评测区分物理可行的预测与语言上合理但存在安全风险的输出。", ["bad"]),
-        S(["obj", "e5"], "Safety-constrained training objectives are being explored, with ablations and validation (work in progress).", "正在探索安全约束训练目标，并推进消融实验与方法验证（进行中）。"),
       ],
     },
 
@@ -310,11 +225,11 @@
       els: [
         N("data", 10, 18, 370, 40, ["Data: textbooks · diagnostic · distilled · general", "数据：教材 · 诊断 · 蒸馏 · 通用"], "muted"),
         N("base", 10, 110, 90, 44, ["Qwen2.5-VL\n7B / 72B", "Qwen2.5-VL\n7B / 72B"], "muted"),
-        N("s1", 120, 110, 120, 44, ["Domain training\n~2M samples", "领域训练\n约 200 万样本"]),
-        N("s2", 260, 110, 120, 44, ["Instruction\nalignment 10.3K", "指令对齐\n1.03 万样本"]),
-        N("v1", 260, 212, 120, 44, ["Dolphin V1\nstandard mode", "Dolphin V1\n标准模式"], "ok"),
+        N("s1", 120, 110, 120, 44, ["Post-training\n~2M samples", "后训练\n约 200 万样本"]),
+        N("s2", 260, 110, 120, 44, ["Instruction\ntuning 10.3K", "指令微调\n1.03 万样本"]),
+        N("v1", 260, 212, 120, 44, ["Dolphin Chat", "Dolphin Chat"], "ok"),
         N("s3", 400, 110, 110, 44, ["UARPO RL\n60.7K", "UARPO 强化学习\n6.07 万"], "accent"),
-        N("r1", 530, 105, 100, 54, ["Dolphin R1\ndeep reasoning", "Dolphin R1\n深度推理"], "ok"),
+        N("r1", 530, 105, 100, 54, ["Dolphin\nReasoning", "Dolphin\nReasoning"], "ok"),
         N("rew", 400, 18, 230, 40, ["Reward = ½ format + ½ answer", "奖励 = ½ 格式 + ½ 答案"]),
         E("e1", "base", "s1"), E("e2", "s1", "s2"), E("e3", "s2", "s3"), E("e4", "s3", "r1"),
         E("d", "data", "s1", "M180,58 L180,110"),
@@ -322,29 +237,14 @@
         E("r", "rew", "s3", "M455,58 L455,110"),
         BARS("res", 400, 175, 230, 115, "U2-Score (U2-Bench)", [
           { t: ["Random", "随机"], v: 0.2125, label: "0.21" }, { t: "Gemini-2.5", v: 0.2968, label: "0.30" },
-          { t: "V1", v: 0.539, label: "0.54" }, { t: "R1", v: 0.5835, label: "0.58", k: "accent" }], 0.6),
+          { t: "Chat", v: 0.539, label: "0.54" }, { t: "Reasoning", v: 0.5835, label: "0.58", k: "accent" }], 0.6),
       ],
       steps: [
-        S(["data", "base", "s1", "e1", "d"], "Starting from Qwen2.5-VL, stage one trains on about 2 million ultrasound and general samples to add domain knowledge without losing general skills.", "以 Qwen2.5-VL 为基座，第一阶段用约 200 万条超声与通用数据训练，注入领域知识的同时保留通用能力。"),
-        S(["s2", "v1", "e2", "v"], "Stage two aligns answers to clinical formats with 10.3K curated, expert-checked samples, producing Dolphin V1 (standard mode).", "第二阶段用 1.03 万条经专家审核的样本对齐临床输出格式，得到 Dolphin V1（标准模式）。"),
-        S(["s3", "rew", "r1", "e3", "e4", "r"], "Stage three runs UARPO reinforcement learning, rewarding correct format and correct diagnosis equally, producing Dolphin R1 (deep reasoning).", "第三阶段进行 UARPO 强化学习，格式正确与诊断正确各占一半奖励，得到 Dolphin R1（深度推理）。"),
-        S(["res"], "On U2-Bench, Dolphin R1 scores 0.5835, about twice the best non-Dolphin model (Gemini-2.5-Pro, 0.2968).", "在 U2-Bench 上，Dolphin R1 得分 0.5835，约为最强非 Dolphin 模型（Gemini-2.5-Pro，0.2968）的两倍。"),
-        S([], "Compared with V1, R1 locates lesions and organs more accurately and cuts measurement error (RMSE) by 10.6%.", "与 V1 相比，R1 的病灶与器官定位更准确，测量误差（RMSE）降低 10.6%。", ["v1", "r1"]),
-      ],
-    },
-
-    neuro: {
-      els: [
-        N("t1", 10, 40, 185, 54, ["Text track\nmedical reasoning", "文本轨道\n医学推理"]),
-        N("t2", 10, 180, 185, 54, ["Vision track\nbrain MRI (BrainVLM)", "视觉轨道\n脑 MRI（BrainVLM）"], "accent"),
-        N("mri", 235, 180, 165, 54, ["Multi-source MRI\n16 VLMs × 6 tasks", "多源脑 MRI\n16 个 VLM × 6 类任务"]),
-        N("joint", 445, 106, 185, 64, ["Joint trustworthiness\nmetrics", "联合可信度\n指标"], "ok"),
-        E("e1", "t2", "mri"), E("e2", "mri", "joint"), E("e3", "t1", "joint"),
-      ],
-      steps: [
-        S(["t1", "t2"], "Neuropsychiatric evaluation runs on two tracks: medical-text reasoning and brain-image understanding.", "神经精神科评测分为两条轨道：医学文本推理与脑影像视觉理解。"),
-        S(["mri", "e1"], "The BrainVLM track integrates multi-source brain MRI and runs 16 VLMs on 6 tasks with unified inference, parsing, and scoring.", "BrainVLM 轨道整合多源脑 MRI，对 16 个 VLM 在 6 类任务上统一推理、解析与评分。"),
-        S(["joint", "e2", "e3"], "Both tracks report accuracy together with trustworthiness metrics.", "两条轨道同时报告准确率与可信度指标。"),
+        S(["data", "base", "s1", "e1", "d"], "Starting from Qwen2.5-VL, stage one post-trains on over 2 million ultrasound and general-domain samples to build medical knowledge while keeping general skills.", "以 Qwen2.5-VL 为基座，第一阶段用 200 万条以上的超声与通用数据做后训练，建立医学知识的同时保留通用能力。"),
+        S(["s2", "v1", "e2", "v"], "Stage two is instruction tuning on 10.3K samples of multi-turn dialogue and deep-reasoning tasks; the first two stages produce Dolphin Chat.", "第二阶段用 1.03 万条多轮对话与深度推理样本做指令微调，前两个阶段得到 Dolphin Chat。"),
+        S(["s3", "rew", "r1", "e3", "e4", "r"], "Stage three runs UARPO (Ultrasound Answer Reward Preference Optimization), rewarding correct format and correct diagnosis equally, and yields Dolphin Reasoning.", "第三阶段进行 UARPO（超声答案奖励偏好优化）强化学习，格式正确与诊断正确各占一半奖励，得到 Dolphin Reasoning。"),
+        S(["res"], "On U2-Bench, Dolphin Reasoning scores 0.5835, about twice the best non-Dolphin model (Gemini-2.5-Pro, 0.2968).", "在 U2-Bench 上，Dolphin Reasoning 得分 0.5835，约为最强非 Dolphin 模型（Gemini-2.5-Pro，0.2968）的两倍。"),
+        S([], "Compared with Dolphin Chat, Dolphin Reasoning locates lesions and organs more accurately and cuts measurement error (RMSE) by 10.6%.", "与 Dolphin Chat 相比，Dolphin Reasoning 的病灶与器官定位更准确，测量误差（RMSE）降低 10.6%。", ["v1", "r1"]),
       ],
     },
 
