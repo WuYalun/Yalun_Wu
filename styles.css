@@ -6,7 +6,7 @@
   --line: #e4ddd4;
   --accent: #0f4c5c;
   --accent-soft: #e6f1f3;
-  --sidebar: 280px;
+  --sidebar: 210px;
   --max: 1080px;
 }
 
@@ -55,7 +55,7 @@ a:hover { color: #083844; }
   padding: 2.5rem 1.25rem 4rem;
   display: grid;
   grid-template-columns: var(--sidebar) minmax(0, 1fr);
-  gap: 3rem;
+  gap: 2.6rem;
 }
 
 .sidebar {
@@ -66,26 +66,34 @@ a:hover { color: #083844; }
   overflow: auto;
 }
 
+.id-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.7rem;
+}
+
 .portrait {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
   display: block;
-  border-radius: 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
   background: #efece6;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .cn-name {
-  margin: 1rem 0 0;
+  margin: 0;
   color: var(--muted);
   letter-spacing: 0.18em;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 h1 {
-  margin: 0.15rem 0 0.4rem;
-  font-size: 2.15rem;
+  margin: 0;
+  font-size: 1.7rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -94,17 +102,21 @@ h1 {
 .role, .affiliation {
   margin: 0;
   color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 .contacts {
   list-style: none;
-  padding: 1.1rem 0 0;
-  margin: 1.1rem 0 0;
+  padding: 0.9rem 0 0;
+  margin: 0.9rem 0 0;
   border-top: 1px solid var(--line);
 }
 
 .contacts li {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.55rem;
+  font-size: 0.92rem;
+  line-height: 1.35;
 }
 
 .contacts span {
@@ -386,8 +398,14 @@ footer {
   .sidebar { position: static; }
 
   .portrait {
-    width: 168px;
-    aspect-ratio: 1;
+    width: 52px;
+    height: 52px;
+  }
+
+  .contacts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.2rem 1rem;
   }
 
   .entry, .pub { grid-template-columns: 1fr; gap: 0.25rem; }
@@ -401,7 +419,7 @@ footer {
   body { background: #fff; }
   .toc, .sidebar-actions, .filters { display: none; }
   .page { display: block; max-width: none; }
-  .portrait { width: 140px; }
+  .portrait { width: 48px; height: 48px; }
   a { color: inherit; text-decoration: none; }
 }
 
