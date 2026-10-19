@@ -31,7 +31,7 @@
         E("s3", "st", "vis", "M540,62 L540,120"),
         E("e5", "vis", "ans", "M540,164 L540,222"),
         E("loop", "ans", "ret", "M470,244 L177,244 L177,164"),
-        BARS("res", 15, 196, 150, 90, ["Mean acc. (%), 12 settings", "平均准确率（%），12 组设置"],
+        BARS("res", 15, 196, 150, 90, ["Mean accuracy (%)", "平均准确率（%）"],
           [{ t: "DAG", v: 62.3 }, { t: "TAEC", v: 66.8, k: "accent" }], 70),
       ],
       steps: [
@@ -114,7 +114,7 @@
         E("e1", "in", "rg"), E("e2", "in", "risk"),
         E("e3", "rg", "dec"), E("e4", "risk", "dec"), E("e5", "dec", "out"),
         BARS("res", 15, 200, 330, 86, ["Conflicting-fact update accuracy (%)", "冲突事实更新准确率（%）"],
-          [{ t: "Baseline", v: 40 }, { t: "LHMG", v: 100, k: "accent" }], 100),
+          [{ t: ["Baseline", "基线"], v: 40 }, { t: "LHMG", v: 100, k: "accent" }], 100),
       ],
       steps: [
         S(["in"], "A new fact can conflict with what the agent already remembers.", "新事实可能与 Agent 已有的记忆冲突。"),
