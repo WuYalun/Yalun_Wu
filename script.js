@@ -33,6 +33,7 @@ const I18N = {
     status_icassp: "ICASSP 2027 在投",
     status_aaai: "AAAI 2027 在投",
     status_naacl: "NAACL 2027 拟投",
+    status_wip: "进行中",
     status_cvpr: "CVPR 2027 拟投",
     status_nmi: "进行中 · 预计投稿 Nature Machine Intelligence",
     status_nc: "整理中 · 预计投稿 Nature Communications",
@@ -49,7 +50,7 @@ const I18N = {
     abs_veb: "多步视觉 RAG 中，检索到相关证据并不等于整条推理轨迹都能用上它。TAEC 无需训练，以尚未满足的答题需求作为共享状态，统一协调证据准入、记忆呈现与视觉细节分配。12 组设置下平均准确率 66.8%，较 DAG 基线提升 4.5pp。",
     abs_progress: "Agent 框架常依据模型自报的任务进度决定继续还是停止。我们在 τ²-bench 与可控测试平台 StageIF 上，沿任务全生命周期评测进度汇报的可靠性：几乎所有部署模型都只在部分阶段可靠，多数在执行中途失准、完成后恢复，最新一代则在收尾时趋于保守。结论是框架不应仅凭模型的状态汇报控制任务流程。",
     abs_lhmg:
-      "以版本化修订、风险门控、约束解码和治理式遗忘管理 Agent 记忆，冲突事实更新准确率 40% → 100%，跨轮次决策一致性最高 +13pp。",
+      "以版本化修订、风险门控与治理式遗忘管理 LLM Agent 的长时记忆，缓解事实冲突与记忆漂移。",
     abs_procura:
       "学习融合噪声语音与图像证据，用于商品搜索。",
     abs_schema:
@@ -135,6 +136,7 @@ const I18N = {
     status_icassp: "Under review, ICASSP 2027",
     status_aaai: "Under review, AAAI 2027",
     status_naacl: "Planned submission, NAACL 2027",
+    status_wip: "In progress",
     status_cvpr: "Planned submission, CVPR 2027",
     status_nmi: "In progress · targeting Nature Machine Intelligence",
     status_nc: "In preparation · targeting Nature Communications",
@@ -151,7 +153,7 @@ const I18N = {
     abs_veb: "In multi-step visual RAG, retrieving the right evidence does not mean the reasoning trajectory keeps using it. TAEC is a training-free framework that tracks unmet answer requirements as shared state to coordinate evidence admission, memory rendering, and visual detail. It reaches 66.8% mean accuracy across 12 settings, 4.5 pp above DAG.",
     abs_progress: "Agent frameworks often decide whether to continue or stop based on a model's self-reported progress. Evaluating this across the full task lifecycle on τ²-bench and the controlled StageIF testbed, we find nearly every deployed model is reliable only at some stages: most lose accuracy mid-task and recover at the end, while the newest generation turns conservative at the finish line. Frameworks should not control task flow on state reports alone.",
     abs_lhmg:
-      "Governs agent memory via versioned revision, risk gating, constrained decoding, and governed forgetting; conflicting-fact update accuracy 40% → 100%, cross-turn consistency up to +13 pp.",
+      "Governs long-horizon agent memory through versioned revision, risk gating, and governed forgetting to curb fact conflicts and memory drift.",
     abs_procura:
       "Learns to fuse noisy speech and image-grounded evidence for product search.",
     abs_schema:
